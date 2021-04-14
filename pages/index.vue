@@ -6,6 +6,7 @@
 
             <main>
                 <div>
+                    <togglebutton></togglebutton>
                     <!-- Hero card -->
                     <div class="relative">
                         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
@@ -229,7 +230,9 @@
 </template>
 
 <script>
-export default {}
+import Togglebutton from '~/components/Togglebutton.vue'
+export default {
+  components: { Togglebutton },}
 </script>
 
 <style>
