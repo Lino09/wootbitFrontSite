@@ -22,7 +22,6 @@
     }
   },
   "dependencies": {
-    "@headlessui/vue": "^1.0.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "vue-scrollto": "^2.20.0"
