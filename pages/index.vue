@@ -63,7 +63,7 @@
                             </p>
                             <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-6 lg:grid-cols-6">
                                 <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
-                                     v-for="(key,client) in clients" :key="client">
+                                     v-for="(key,index) in this.clients" :key="index">
                                     <img class="h-10" v-bind:src="'images/clients/' + key + '.png'"
                                          v-bind:alt="key">
                                 </div>
@@ -154,7 +154,7 @@
                             </div>
 
                             <!-- PROJECTS SECTION -->
-                                <projects-section-component></projects-section-component>
+                                <projects-section-component :projects="projects"></projects-section-component>
                             <!-- END PROJECTS SECTION-->
 
 
@@ -230,7 +230,27 @@
 </template>
 
 <script>
-export default {}
+export default {
+
+  async  created() {
+
+      await this.$axios.$get('/api/projects').then( response => {
+          this.projects = response.data
+      }).catch(error => console.log(error))
+  
+  
+  
+},
+data(){
+    return{
+        years_in_service: 3,
+        actual_year: 2090,
+        clients:[],
+        team:[],
+        projects: [],
+        services:[]
+}}
+}
 </script>
 
 <style>
