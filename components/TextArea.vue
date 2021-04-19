@@ -11,7 +11,7 @@
     </div>
      <div v-if="errors" class="text-xs text-red-500">
           <p v-if="!maxLength">Máximo 500 Caracteres</p>
-          
+          <p v-if="!requerido">El mensaje es requerido</p>
           <p v-if="!minLength">Mínimo 10 Caracteres</p>
           </div>
   </div>
@@ -28,6 +28,10 @@
         type: String,
         default: ''
       },
+    requerido:{
+      type: Boolean,
+      defaul: true
+    },
       value: {
         type: [String, Number],
         default: ''

@@ -20,7 +20,7 @@
                         <p class="mt-4 text-lg text-gray-500 sm:mt-3">
                             ¡Nos encantaría saber de ti!, Envíanos un mensaje para saber más de tu idea de proyecto.
                         </p>
-                        <form action="#" method="POST"
+                        <form action="#" method="POST" @submit.prevent="submit"
                               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 
                             <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="Elon Musk" :errors="$v.name.$error" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
@@ -31,13 +31,14 @@
                             <opt-input label="Teléfono" hint="1234567890" v-model="phone"></opt-input>
 
                             <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$error"
-                            :maxLength="$v.message.maxLength" :minLength="$v.message.minLength"
+                            :maxLength="$v.message.maxLength" :minLength="$v.message.minLength" :requerido="$v.message.required"
                             ></text-area>
 
                             <div class="text-right sm:col-span-2">
                                 <button :disabled="$v.$invalid"
                                 type="submit"
-                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        :class="{ 'cursor-not-allowed': $v.$invalid}">
                                     Enviar
                                 </button>
                             </div>
@@ -47,8 +48,8 @@
             </div>
         </div>
     </div>
-</template>
 
+</template>
 <script>
 import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 import BaseInput from './BaseInput.vue';
@@ -78,6 +79,14 @@ export default {
             required,
             minLength: minLength(10),
             maxLength: maxLength(500)
+        }
+    },
+    methods:{
+        submit(){
+            this.$v.$touch()
+            if(!this.$v.$invalid){
+               console.log('form submitted')
+            }
         }
     }
    
