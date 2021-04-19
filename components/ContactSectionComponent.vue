@@ -22,69 +22,23 @@
                         </p>
                         <form action="#" method="POST"
                               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                            <div>
-                                <label for="first_name" class="block text-sm font-medium text-gray-700">
-                                    Name
-                                </label>
-                                <div class="mt-1">
-                                    <input type="text" name="first_name" id="first_name"
-                                           autocomplete="given-name"
-                                           class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                </div>
-                            </div>
-                            <div>
-                                <label for="email"
-                                       class="block text-sm font-medium text-gray-700">Email</label>
-                                <div class="mt-1">
-                                    <input id="email" name="email" type="email" autocomplete="email"
-                                           class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                </div>
-                            </div>
 
-                            <div class="sm:col-span-2">
-                                <div class="flex justify-between">
-                                    <label for="company"
-                                           class="block text-sm font-medium text-gray-700">Company</label>
-                                    <span id="company_description"
-                                          class="text-sm text-gray-500">Optional</span>
-                                </div>
-                                <div class="mt-1">
-                                    <input type="text" name="company" id="company"
-                                           autocomplete="organization"
-                                           class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                </div>
-                            </div>
-                            <div class="sm:col-span-2">
-                                <div class="flex justify-between">
-                                    <label for="phone"
-                                           class="block text-sm font-medium text-gray-700">Phone</label>
-                                    <span id="phone_description"
-                                          class="text-sm text-gray-500">Optional</span>
-                                </div>
-                                <div class="mt-1">
-                                    <input type="text" name="phone" id="phone" autocomplete="tel"
-                                           aria-describedby="phone_description"
-                                           class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                </div>
-                            </div>
-                            <div class="sm:col-span-2">
-                                <div class="flex justify-between">
-                                    <label for="how_can_we_help"
-                                           class="block text-sm font-medium text-gray-700">How
-                                        can we help you?</label>
-                                    <span id="how_can_we_help_description" class="text-sm text-gray-500">Max. 500 characters</span>
-                                </div>
-                                <div class="mt-1">
-                                        <textarea id="how_can_we_help" name="how_can_we_help"
-                                                  aria-describedby="how_can_we_help_description" rows="4"
-                                                  class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"></textarea>
-                                </div>
-                            </div>
+                            <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="Elon Musk" :errors="$v.name.$error" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
+                               
+                            <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="email@mail.com" :errors="$v.email.$error" @blurred="$v.email.$touch()"></base-input>
+
+                            <opt-input label="Compañía" hint="Tesla" v-model="company"></opt-input>
+                            <opt-input label="Teléfono" hint="1234567890" v-model="phone"></opt-input>
+
+                            <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$error"
+                            :maxLength="$v.message.maxLength" :minLength="$v.message.minLength"
+                            ></text-area>
 
                             <div class="text-right sm:col-span-2">
-                                <button type="submit"
+                                <button :disabled="$v.$invalid"
+                                type="submit"
                                         class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                    Submit
+                                    Enviar
                                 </button>
                             </div>
                         </form>
@@ -96,8 +50,36 @@
 </template>
 
 <script>
+import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
+import BaseInput from './BaseInput.vue';
 export default {
-    name: "ContactSectionComponent"
+  components: { BaseInput},
+    name: "ContactSectionComponent",
+    data(){
+        return{
+               name:'',
+                email:'',
+                company:'',
+                phone:'',
+                message:''
+            
+        }
+    },
+    validations:{
+        name:{
+            required,
+            minLength: minLength(4),
+        },
+        email:{
+            email,
+            required
+        },
+        message:{
+            required,
+            minLength: minLength(10),
+            maxLength: maxLength(500)
+        }
+    }
+   
 }
 </script>
-
