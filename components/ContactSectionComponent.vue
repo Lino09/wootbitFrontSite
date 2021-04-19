@@ -23,14 +23,14 @@
                         <form action="#" method="POST" @submit.prevent="submit"
                               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 
-                            <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="John Wootbit Doe" :errors="$v.name.$error" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
+                            <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="John Wootbit Doe" :errors="$v.name.$invalid" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
                                
-                            <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="john@wootbit.io" :errors="$v.email.$error" @blurred="$v.email.$touch()"></base-input>
+                            <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="john@wootbit.io" :errors="$v.email.$invalid" @blurred="$v.email.$touch()"></base-input>
 
                             <opt-input label="Compañía" hint="Tesla" v-model="company"></opt-input>
                             <opt-input label="Teléfono" hint="1234567890" v-model="phone"></opt-input>
 
-                            <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$error"
+                            <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$invalid"
                             :maxLength="$v.message.maxLength" :minLength="$v.message.minLength" :requerido="$v.message.required"
                             ></text-area>
 
