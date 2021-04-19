@@ -23,9 +23,9 @@
                         <form action="#" method="POST" @submit.prevent="submit"
                               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 
-                            <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="Elon Musk" :errors="$v.name.$error" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
+                            <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="John Wootbit Doe" :errors="$v.name.$error" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
                                
-                            <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="email@mail.com" :errors="$v.email.$error" @blurred="$v.email.$touch()"></base-input>
+                            <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="john@wootbit.io" :errors="$v.email.$error" @blurred="$v.email.$touch()"></base-input>
 
                             <opt-input label="Compañía" hint="Tesla" v-model="company"></opt-input>
                             <opt-input label="Teléfono" hint="1234567890" v-model="phone"></opt-input>

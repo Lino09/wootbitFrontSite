@@ -10,9 +10,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'frontwootbit',
+    title: 'Wootbit - Software Development',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'es',
     },
     meta: [
       { charset: 'utf-8' },
@@ -52,6 +52,12 @@ export default {
 
   axios: {
     baseURL: process.env.API_WTBT_BASE_URL, // Used as fallback if no runtime config is provided
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.API_WTBT_BASE_URL
+  },
+  privateRuntimeConfig: {
+    apiSecret: process.env.API_SECRET
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

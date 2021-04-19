@@ -9,7 +9,7 @@
                         <a href="#">
                             <span class="sr-only">Workflow</span>
                             <img class="h-8 w-auto sm:h-10 object-fit"
-                                 src="images/logoletter.png" alt="">
+                                 src="../static/letrasWtbt.png" alt="">
                         </a>
                     </div>
                     <div class="-mr-2 -my-2 md:hidden">
