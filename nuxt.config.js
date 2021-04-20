@@ -51,7 +51,8 @@ export default {
   modules: [['vue-scrollto/nuxt', { duration: 300 }],'@nuxtjs/axios',],
 
   axios: {
-    baseURL: process.env.API_WTBT_BASE_URL, // Used as fallback if no runtime config is provided
+    baseURL: process.env.API_WTBT_BASE_URL, // Used as fallback if no runtime config is provided,
+    credentials: true
   },
   publicRuntimeConfig: {
     baseURL: process.env.API_WTBT_BASE_URL
