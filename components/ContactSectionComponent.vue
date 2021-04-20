@@ -27,8 +27,8 @@
                                
                             <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="john@wootbit.io" :errors="$v.email.$invalid" @blurred="$v.email.$touch()"></base-input>
 
-                            <opt-input label="Compañía" hint="Tesla" v-model="company"></opt-input>
-                            <opt-input label="Teléfono" hint="1234567890" v-model="phone"></opt-input>
+                            <opt-input label="Teléfono" hint="1234567890" v-model="phone" :lengthRequired="$v.phone.maxLength" :errors="$v.phone.$invalid"></opt-input>
+                            <opt-input label="Compañía" hint="Mi empresa" v-model="company" :lengthRequired="$v.company.maxLength" :errors="$v.company.$invalid"></opt-input>
 
                             <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$invalid"
                             :maxLength="$v.message.maxLength" :minLength="$v.message.minLength" :requerido="$v.message.required"
@@ -70,22 +70,42 @@ export default {
         name:{
             required,
             minLength: minLength(4),
+            maxLength: maxLength(30)
         },
         email:{
             email,
-            required
+            required,
+            maxLength: maxLength(50)
         },
         message:{
             required,
             minLength: minLength(10),
             maxLength: maxLength(500)
+        },
+        company: {
+            maxLength: maxLength(20)
+        },
+        phone: {
+            maxLength: maxLength(20)
         }
     },
     methods:{
         submit(){
             this.$v.$touch()
             if(!this.$v.$invalid){
-               console.log('form submitted')
+
+              const data = JSON.stringify({
+                "type": "contact",
+                "attributes": {
+                "you_are_a_boot": "",
+                 "name": this.name,
+                 "email": this.email,
+                 "company": this.company,
+                 "phone": this.phone,
+                 "message": this.message
+  }
+});
+               this.$axios.$post('/api/contact', data).then( response => console.log(response)).catch(error => console.log(error))
             }
         }
     }

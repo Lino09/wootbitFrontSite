@@ -8,6 +8,9 @@
       <input @input="updateValue" type="text" :name="label" :id="label" autocomplete="organization"
         class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" :value="value" :placeholder="hint" >
     </div>
+      <div v-if="errors" class="text-xs text-red-500">
+          <p v-if="value.length >20">Máximo 20 Caracteres </p>
+          </div>
   </div>
 </template>
 
@@ -25,7 +28,15 @@
       value: {
         type: [String, Number],
         default: ''
-      }
+      },
+   lenghtRequired:{
+        type: Boolean,
+        default:true
+    },
+    errors:{
+      type: Boolean,
+      default:false
+    }
     },
     methods: {
       updateValue(event) {
