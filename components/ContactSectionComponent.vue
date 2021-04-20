@@ -29,6 +29,8 @@
 
                             <opt-input label="Teléfono" hint="1234567890" v-model="phone" :lengthRequired="$v.phone.maxLength" :errors="$v.phone.$invalid"></opt-input>
                             <opt-input label="Compañía" hint="Mi empresa" v-model="company" :lengthRequired="$v.company.maxLength" :errors="$v.company.$invalid"></opt-input>
+                            
+                            <input class="invisible h-0" v-model="youAreABoot">
 
                             <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$invalid"
                             :maxLength="$v.message.maxLength" :minLength="$v.message.minLength" :requerido="$v.message.required"
@@ -62,7 +64,8 @@ export default {
                 email:'',
                 company:'',
                 phone:'',
-                message:''
+                message:'',
+                youAreABoot:''
 
         }
     },
@@ -93,11 +96,10 @@ export default {
         submit(){
             this.$v.$touch()
             if(!this.$v.$invalid){
-
               const data = {
                 "type": "contact",
                 "attributes": {
-                  "you_are_a_boot": "",
+                  "you_are_a_boot": this.youAreABoot,
                   "name": this.name,
                   "email": this.email,
                   "company": this.company,

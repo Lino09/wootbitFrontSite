@@ -232,12 +232,16 @@
 <script>
 export default {
 
-   async created() {
+   created() {
+       this.fetchProjects()
+},
+methods:{
+    async fetchProjects(){
+    
       await this.$axios.$get('/api/projects').then( response => {
           this.projects = response.data
       }).catch(error => console.log(error))
-},
-mthods:{
+    }
 },
 data(){
     return{

@@ -18,12 +18,12 @@
                     ullamcorper malesuada. Eleifend condimentum id viverra nulla.
                 </p>
             </div>
-            <div
-                class="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
+            <flickity ref="flickity" :options="flickityOptions"
+                class=" flickity mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-1 lg:max-w-7xl py-4 border">
 
-                <div  v-for="project, index in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                    <div class="flex-shrink-0">
-                        <img class="h-48 w-full object-cover"
+                <div  v-for="project, index in projects" :key="index" class="carousel-cell flex flex-col rounded-lg shadow-lg overflow-hidden w-1/3 px-2 rounded-t-md border border-red-500">
+                    <div class="flex-shrink-0 rounded-t-md">
+                        <img class="h-48 w-full object-cover rounded-t-md"
                              :src="project.attributes.picture"
                              alt="">
                     </div>
@@ -75,16 +75,32 @@
                 </div>
 
      
-            </div>
+            </flickity>
         </div>
     </div>
 </div>
 </template>
 
 <script>
+import Flickity from 'vue-flickity'
 export default {
 name: "ProjectsSectionComponent",
-props:['projects']
+props:['projects'],
+  components: {
+    Flickity
+  },
+  data () {
+    return {
+      flickityOptions: {
+        initialIndex: 3,
+        prevNextButtons: true,
+        pageDots: true,
+        wrapAround: true,
+        freeScroll: false
+        // any options from Flickity can be used
+      }
+    }
+  }
 
 
 }
