@@ -24,7 +24,7 @@
                               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 
                             <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="John Wootbit Doe" :errors="$v.name.$invalid" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
-                               
+
                             <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="john@wootbit.io" :errors="$v.email.$invalid" @blurred="$v.email.$touch()"></base-input>
 
                             <opt-input label="Teléfono" hint="1234567890" v-model="phone" :lengthRequired="$v.phone.maxLength" :errors="$v.phone.$invalid"></opt-input>
@@ -63,7 +63,7 @@ export default {
                 company:'',
                 phone:'',
                 message:''
-            
+
         }
     },
     validations:{
@@ -94,21 +94,21 @@ export default {
             this.$v.$touch()
             if(!this.$v.$invalid){
 
-              const data = JSON.stringify({
+              const data = {
                 "type": "contact",
                 "attributes": {
-                "you_are_a_boot": "",
-                 "name": this.name,
-                 "email": this.email,
-                 "company": this.company,
-                 "phone": this.phone,
-                 "message": this.message
-  }
-});
+                  "you_are_a_boot": "",
+                  "name": this.name,
+                  "email": this.email,
+                  "company": this.company,
+                  "phone": this.phone,
+                  "message": this.message
+                }
+              };
                this.$axios.$post('/api/contact', data).then( response => console.log(response)).catch(error => console.log(error))
             }
         }
     }
-   
+
 }
 </script>
