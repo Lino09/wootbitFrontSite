@@ -248,7 +248,24 @@ data(){
         years_in_service: 3,
         actual_year: 2021,
         clients:[],
-        team:[],
+        team:[
+            {
+                photo:'/_nuxt/static/cmedina.jpg',
+                position:'Desarrollador BackEnd',
+                name:'Chrystopher Medina' 
+            },
+            {
+                photo:'/_nuxt/static/aherrera.jpg',
+                position:'Testing y Desarrollo FrontEnd',
+                name:'Abel  Herrera' 
+            },
+            {
+                photo:'/_nuxt/static/arivas.jpg',
+                position:'Diseñador Gráfico',
+                name:'Alex Rivas' 
+            }
+
+        ],
         projects: [],
         services:[]
 }}

@@ -19,7 +19,7 @@
                 </p>
             </div>
             <flickity ref="flickity" :options="flickityOptions"
-                class=" flickity mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-1 lg:max-w-7xl py-4 border">
+                class=" flickity mt-12 mx-auto max-w-md px-4 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-1 lg:max-w-7xl py-4 border">
 
                 <div  v-for="project, index in projects" :key="index" class="carousel-cell flex flex-col rounded-lg shadow-lg overflow-hidden w-1/3 px-2 rounded-t-md border border-red-500">
                     <div class="flex-shrink-0 rounded-t-md">

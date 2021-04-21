@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="px-5 py-2">
-                        <a href="#" class="text-base text-gray-400 hover:text-gray-100">
+                        <a href="#" v-scroll-to="'#projects-section'" class="text-base text-gray-400 hover:text-gray-100">
                             Proyectos
                         </a>
                     </div>
