@@ -250,17 +250,17 @@ data(){
         clients:[],
         team:[
             {
-                photo:'/_nuxt/static/cmedina.jpg',
+                photo:'cmedina.jpg',
                 position:'Desarrollador BackEnd',
                 name:'Chrystopher Medina' 
             },
             {
-                photo:'/_nuxt/static/aherrera.jpg',
+                photo:'aherrera.jpg',
                 position:'Testing y Desarrollo FrontEnd',
                 name:'Abel  Herrera' 
             },
             {
-                photo:'/_nuxt/static/arivas.jpg',
+                photo:'arivas.jpg',
                 position:'Diseñador Gráfico',
                 name:'Alex Rivas' 
             }

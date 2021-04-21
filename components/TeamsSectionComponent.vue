@@ -22,7 +22,7 @@
                                 <div class="aspect-w-3 aspect-h-2">
                                     <div class="relative">
                                         <img class="object-cover shadow-lg rounded-lg transform rotate-3"
-                                             :src="friend.photo"
+                                             :src="require(`~/assets/${friend.photo}`)"
                                              :alt="friend.name">
                                         <div aria-hidden="true"
                                              class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-100 rounded-lg"
