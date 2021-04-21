@@ -49,8 +49,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
+      </div>
 </template>
 <script>
 import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'

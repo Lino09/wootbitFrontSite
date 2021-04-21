@@ -181,7 +181,7 @@
                                             La fecha de lanzamiento no significa “Adiós”
                                         </p>
                                         <p class="mt-3 text-lg text-gray-300">
-                                           Contamos con excelente soporte técnico e incluso después de la fecha de lanzamiento de tu proyecto continuaremos colaborando contigo, manteniendote a ti y a tus productos“online”
+                                           Contamos con excelente soporte técnico e incluso después de la fecha de lanzamiento de tu proyecto continuaremos colaborando contigo, manteniendote a ti y a tus productos &#8220;online&#8221;.
                                         </p>
                                         <div class="mt-8">
                                             <div class="inline-flex rounded-md shadow">
@@ -216,6 +216,30 @@
 
             <footer-section-component v-bind:actual_year="actual_year"></footer-section-component>
         </div>
+
+
+        <!-- Messenger plugin de chat Code -->
+    <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <!-- Your plugin de chat code -->
+      <div class="fb-customerchat" attribution="biz_inbox" 
+        page_id="1044307618963783">
+      </div>
+
     </div>
 </template>
 

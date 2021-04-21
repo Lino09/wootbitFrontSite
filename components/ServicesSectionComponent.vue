@@ -1,4 +1,6 @@
 <template>
+
+<!-- COLOR BASE ICONOS #FF5800 -->
     <div>
         <div class="relative bg-white py-16 sm:py-24 lg:py-32" id="services-section">
             <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
@@ -12,11 +14,11 @@
                     nunc,
                     ullamcorper malesuada. Eleifend condimentum id viverra nulla.
                 </p> 
-                <div class="mt-12">
-                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="mt-24">
+                    <div class="grid grid-cols-1 gap-8 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
                         <div class="pt-6">
                             <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                                <div class="-mt-6">
+                                <div class="-mt-24">
                                     <div>
                         <span
                             class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
@@ -26,11 +28,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
                           </svg> -->
-                          <img src="../assets/svg/web.svg" class="w-20 h-16">
+                          <img src="../assets/svg/web.svg" class="w-40 h-32">
                         </span>
                                     </div>
-                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Desarrollo de sistemas web</h3>
-                                    <p class="mt-5 text-base text-gray-500">
+                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">Desarrollo de sistemas web</h3>
+                                    <p class="mt-5 text-base text-gray-500 h-16">
                                         Contamos con la experiencia necesaria para contruir tu próximo sitio web usando tecnológias modernas.
                                     </p>
                                 </div>
@@ -39,7 +41,7 @@
 
                         <div class="pt-6">
                             <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                                <div class="-mt-6">
+                                <div class="-mt-24">
                                     <div>
                         <span
                             class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
@@ -49,11 +51,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                           </svg> -->
-                          <img src="../assets/svg/app.svg" class="w-20 h-16">
+                          <img src="../assets/svg/app.svg" class="w-40 h-32">
                         </span>
                                     </div>
-                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Desarrollo de aplicaciones móviles</h3>
-                                    <p class="mt-5 text-base text-gray-500">
+                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">Desarrollo de aplicaciones móviles</h3>
+                                    <p class="mt-5 text-base text-gray-500 h-16">
                                         Plasmamos tu idea en una aplicación móvil para plataformas iOS y Android.
                                     </p>
                                 </div>
@@ -62,7 +64,7 @@
 
                         <div class="pt-6">
                             <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                                <div class="-mt-6">
+                                <div class="-mt-24">
                                     <div>
                         <span
                             class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
@@ -72,11 +74,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                           </svg> -->
-                          <img src="../assets/svg/soporte.svg" class="w-20 h-16">
+                          <img src="../assets/svg/soporte.svg" class="w-40 h-32">
                         </span>
                                     </div>
-                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">El soporte que tú y tu producto se merecen</h3>
-                                    <p class="mt-5 text-base text-gray-500">
+                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">El soporte que tú y tu producto se merecen</h3>
+                                    <p class="mt-5 text-base text-gray-500 h-16">
                                         Contamos con un excelente soporte durante y después del lanzamiento de tu producto.
                                     </p>
                                 </div>
@@ -85,7 +87,7 @@
 
                         <div class="pt-6">
                             <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                                <div class="-mt-6">
+                                <div class="-mt-24">
                                     <div>
                         <span
                             class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
@@ -95,12 +97,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                           </svg> -->
-                          <img src="../assets/svg/uiux.svg" class="w-20 h-16">
+                          <img src="../assets/svg/uiux.svg" class="w-40 h-32">
                         </span>
                                     </div>
-                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">
                                         Diseño UX & UI</h3>
-                                    <p class="mt-5 text-base text-gray-500">
+                                    <p class="mt-5 text-base text-gray-500 h-16">
                                         Creamos soluciones intuitivas, simples y amigables para nuestros clientes y para los usuarios finales.
                                     </p>
                                 </div>
@@ -109,7 +111,7 @@
 
                         <div class="pt-6">
                             <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                                <div class="-mt-6">
+                                <div class="-mt-24">
                                     <div>
                         <span
                             class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
@@ -121,12 +123,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                           </svg> -->
-                          <img src="../assets/svg/branding.svg" class="w-20 h-16">
+                          <img src="../assets/svg/branding.svg" class="w-40 h-32">
                         </span>
                                     </div>
-                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">
                                         Branding</h3>
-                                    <p class="mt-5 text-base text-gray-500">
+                                    <p class="mt-5 text-base text-gray-500 h-16">
                                         Creamos y damos valor al diseño de tu marca con una imagen positiva para los consumidores.
                                     </p>
                                 </div>
@@ -135,7 +137,7 @@
 
                         <div class="pt-6">
                             <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                                <div class="-mt-6">
+                                <div class="-mt-24">
                                     <div>
                         <span
                             class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
@@ -145,12 +147,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
                           </svg> -->
-                          <img src="../assets/svg/data.svg" class="w-20 h-16">
+                          <img src="../assets/svg/data.svg" class="w-40 h-32">
                         </span>
                                     </div>
-                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                                    <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">
                                        Campañas dígitales.</h3>
-                                    <p class="mt-5 text-base text-gray-500">
+                                    <p class="mt-5 text-base text-gray-500 h-16">
                                         Creamos campañas digitales en difirentes canales para potenciar el alcance de tu producto y que este llegue a los clientes ideales. 
                                     </p>
                                 </div>
