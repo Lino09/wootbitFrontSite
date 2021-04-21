@@ -11,18 +11,17 @@
                             </span>
                         </h2>
                         <p class="text-xl text-gray-500">
-                            Somos un grupo de desarrolladores y diseñadores creativos enfocados en la
-                            creación de servicios útiles para ti.
+                           Somos una compañia de consultores especializados en PHP y JavaScript, construimos aplicaciones basadas en los Frameworks más populares del momento como Laravel, NuxtJs, Vue, React y Flutter. Danos la oportunidad de que nuestro grupo de desarrolladores de aplicaciones y diseñadores creativos creen la aplicación perfecta para impulsar tu negocio. 
                         </p>
                     </div>
                     <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
                         <li v-for="(friend, index) in team" :key="index">
                             <div
                                 class="space-y-4 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                                <div class="aspect-w-3 aspect-h-2">
+                                <div class="aspect-w-3 aspect-h-1">
                                     <div class="relative">
                                         <img class="object-cover shadow-lg rounded-lg transform rotate-3"
-                                             :src="require(`~/assets/${friend.photo}`)"
+                                             :src="require(`~/assets/photo/${friend.photo}`)"
                                              :alt="friend.name">
                                         <div aria-hidden="true"
                                              class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-100 rounded-lg"

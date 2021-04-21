@@ -53,9 +53,9 @@
                         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                             <p class="text-center text-sm font-extrabold tracking-wide uppercase">
                                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-800">
-                                    Más de
+                                    Llevamos más de 
                                 <span v-text="years_in_service"></span>
-                                    años generando confianza a nuestros clientes.
+                                     años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
                                 </span>
                             </p>
                             <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide bg-gradient-to-r from-red-500 to-yellow-500">
@@ -82,16 +82,12 @@
                                 <div
                                     class="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
                                     <div>
-                                        <h2 class="text-base font-semibold tracking-wider text-cyan-600 uppercase">
-                                            Serverless</h2>
+                                       
                                         <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                                            No server? No problem.
+                                            Soluciones tecnólogicas y robustas
                                         </p>
                                         <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                                            Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in
-                                            quis quis
-                                            nunc,
-                                            ullamcorper malesuada. Eleifend condimentum id viverra nulla.
+                                            ¿Aún no existe la herramienta de software perfecta para tu negocio? ¡Nosotros la construimos!
                                         </p>
                                     </div>
                                     <div class="mt-12 -mb-10 sm:-mb-24 lg:-mb-80">
@@ -107,7 +103,7 @@
                             <!--END SERVICES SECTION-->
 
                             <!-- Testimonial section -->
-                            <div class="pb-16 bg-gradient-to-r from-green-500 to-indigo-500 lg:pb-0 lg:z-10 lg:relative">
+                            <div class="pb-16 bg-gradient-to-r from-red-600 to-yellow-600 lg:pb-0 lg:z-10 lg:relative">
                                 <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
                                     <div class="relative lg:-my-8">
                                         <div aria-hidden="true"
@@ -179,19 +175,13 @@
                                     class="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
                                     <div class="md:ml-auto md:w-1/2 md:pl-10">
                                         <h2 class="text-base font-semibold uppercase tracking-wider text-gray-300">
-                                            Award winning support
+                                            Soporte 24/7
                                         </h2>
                                         <p class="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
-                                            We’re here to help
+                                            La fecha de lanzamiento no significa “Adiós”
                                         </p>
                                         <p class="mt-3 text-lg text-gray-300">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus
-                                            tellus
-                                            etiam
-                                            sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.
-                                            Aliquet amet
-                                            volutpat
-                                            quisque ut interdum tincidunt duis.
+                                           Contamos con excelente soporte técnico e incluso después de la fecha de lanzamiento de tu proyecto continuaremos colaborando contigo, manteniendote a ti y a tus productos“online”
                                         </p>
                                         <div class="mt-8">
                                             <div class="inline-flex rounded-md shadow">
@@ -245,7 +235,7 @@ methods:{
 },
 data(){
     return{
-        years_in_service: 3,
+        years_in_service: 5,
         actual_year: 2021,
         clients:[],
         team:[
