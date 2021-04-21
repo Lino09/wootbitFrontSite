@@ -9,19 +9,17 @@
                         Nuestros Servicios
                     </span>
                 </h2>
-                <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                    Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis
-                    nunc,
-                    ullamcorper malesuada. Eleifend condimentum id viverra nulla.
+                <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500 text-justify">
+                    Ayudamos a  nuestros clientes a convertir grandes ideas en asombrosas aplicaciones, productos y servicios mediante nuestros servicios digitales.
                 </p> 
                 <div class="mt-24">
                     <div class="grid grid-cols-1 gap-8 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
                         <div class="pt-6">
-                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border-2 border-indigo-400">
                                 <div class="-mt-24">
                                     <div>
                         <span
-                            class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                            class="inline-flex items-center justify-center p-3 to-cyan-600 rounded-md shadow-lg bg-gray-100">
                           <!-- Heroicon name: outline/cloud-upload -->
                           <!-- <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -40,11 +38,11 @@
                         </div>
 
                         <div class="pt-6">
-                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border-2 border-indigo-400">
                                 <div class="-mt-24">
                                     <div>
                         <span
-                            class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                            class="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gray-100">
                           <!-- Heroicon name: outline/lock-closed -->
                           <!-- <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -63,11 +61,11 @@
                         </div>
 
                         <div class="pt-6">
-                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border-2 border-indigo-400">
                                 <div class="-mt-24">
                                     <div>
                         <span
-                            class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                            class="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gray-100">
                           <!-- Heroicon name: outline/refresh -->
                           <!-- <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -86,11 +84,11 @@
                         </div>
 
                         <div class="pt-6">
-                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border-2 border-indigo-400">
                                 <div class="-mt-24">
                                     <div>
                         <span
-                            class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                            class="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gray-100">
                           <!-- Heroicon name: outline/shield-check -->
                           <!-- <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -110,11 +108,11 @@
                         </div>
 
                         <div class="pt-6">
-                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border-2 border-indigo-400">
                                 <div class="-mt-24">
                                     <div>
                         <span
-                            class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                            class="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gray-100">
                           <!-- Heroicon name: outline/cog -->
                           <!-- <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -136,11 +134,11 @@
                         </div>
 
                         <div class="pt-6">
-                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border-2 border-indigo-400">
                                 <div class="-mt-24">
                                     <div>
                         <span
-                            class="inline-flex items-center justify-center p-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                            class="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gray-100">
                           <!-- Heroicon name: outline/server -->
                           <!-- <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -153,7 +151,7 @@
                                     <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight h-10">
                                        Campañas dígitales.</h3>
                                     <p class="mt-5 text-base text-gray-500 h-16">
-                                        Creamos campañas digitales en difirentes canales para potenciar el alcance de tu producto y que este llegue a los clientes ideales. 
+                                        Creamos campañas digitales en difirentes canales para potenciar el alcance de tu producto y que éste llegue a los clientes ideales. 
                                     </p>
                                 </div>
                             </div>
