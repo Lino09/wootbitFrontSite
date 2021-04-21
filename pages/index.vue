@@ -178,9 +178,9 @@
                                             Soporte 24/7
                                         </h2>
                                         <p class="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
-                                            La fecha de lanzamiento no significa “Adiós”
+                                            La fecha de lanzamiento no significa &#8221;Adiós&#8221;
                                         </p>
-                                        <p class="mt-3 text-lg text-gray-300">
+                                        <p class="mt-3 text-lg text-gray-300 text-justify">
                                            Contamos con excelente soporte técnico e incluso después de la fecha de lanzamiento de tu proyecto continuaremos colaborando contigo, manteniendote a ti y a tus productos &#8220;online&#8221;.
                                         </p>
                                         <div class="mt-8">
@@ -239,7 +239,6 @@
       <div class="fb-customerchat" attribution="biz_inbox" 
         page_id="1044307618963783">
       </div>
-
     </div>
 </template>
 
@@ -272,6 +271,16 @@ data(){
                 photo:'aherrera.jpg',
                 position:'Testing y Desarrollo FrontEnd',
                 name:'Abel  Herrera' 
+            },
+            {
+                photo:'arivas.jpg',
+                position:'Diseñador Gráfico',
+                name:'Alex Rivas' 
+            },
+            {
+                photo:'arivas.jpg',
+                position:'Diseñador Gráfico',
+                name:'Alex Rivas' 
             },
             {
                 photo:'arivas.jpg',

@@ -3,22 +3,22 @@
         <div class="bg-white" id="team-section">
             <div class="mx-auto py-12 px-16 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
                 <div class="space-y-12">
-                    <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                    <div class="space-y-5 sm:space-y-4 text-justify">
 
                         <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
                             <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
                                 Nuestro Equipo
                             </span>
                         </h2>
-                        <p class="text-xl text-gray-500">
+                        <p class="text-xl text-gray-500 text-justify">
                            Somos una compañia de consultores especializados en PHP y JavaScript, construimos aplicaciones basadas en los Frameworks más populares del momento como Laravel, NuxtJs, Vue, React y Flutter. Danos la oportunidad de que nuestro grupo de desarrolladores de aplicaciones y diseñadores creativos creen la aplicación perfecta para impulsar tu negocio. 
                         </p>
                     </div>
                     <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
                         <li v-for="(friend, index) in team" :key="index">
                             <div
-                                class="space-y-4 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                                <div class="aspect-w-3 aspect-h-1">
+                                class=" transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                <div class="aspect-w-8 aspect-h-1">
                                     <div class="relative">
                                         <img class="object-cover shadow-lg rounded-lg transform rotate-3"
                                              :src="require(`~/assets/photo/${friend.photo}`)"
