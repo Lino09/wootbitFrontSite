@@ -16,8 +16,8 @@
 Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes y para nosotros mismos.
                 </p>
             </div>
-            <div class=" mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
-                <div v-for="(project, index) in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            <swiper ref="mySwiper" :options="swiperOptions" class=" mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8">
+                <swiper-slide v-for="(project, index) in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div class="flex-shrink-0">
                         <img class="h-48 w-full object-cover"
                              :src="project.attributes.picture"
@@ -68,20 +68,26 @@ Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes 
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="swiper-pagination" slot="pagination"></div>
+                </swiper-slide>
+            </swiper>
         </div>
     </div>
 </div>
 </template>
 
 <script>
-
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
 export default {
 name: "ProjectsSectionComponent",
 props:['projects'],
   components: {
-   
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
   },
   data () {
     return {
