@@ -16,7 +16,7 @@
 Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes y para nosotros mismos.
                 </p>
             </div>
-            <carousel class=" mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
+            <carousel class=" mt-12">
                 <slide v-for="(project, index) in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden px-2">
                     <div class="flex-shrink-0 rounded-t-md">
                         <img class="h-48 w-full object-cover rounded-t-md"

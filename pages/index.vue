@@ -53,9 +53,7 @@
                         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                             <p class="text-center text-sm font-extrabold tracking-wide uppercase mb-16 lg:mb-0">
                                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-800">
-                                    Llevamos más de 
-                                <span v-text="years_in_service"></span>
-                                     años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
+                                    Llevamos más de 5 años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
                                 </span>
                             </p>
                             <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide bg-gradient-to-r from-red-500 to-yellow-500">
