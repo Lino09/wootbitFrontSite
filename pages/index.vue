@@ -61,11 +61,11 @@
                             <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide bg-gradient-to-r from-red-500 to-yellow-500">
 
                             </p>
-                            <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-6 lg:grid-cols-6">
+                            <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
                                 <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
-                                     v-for="(key,index) in this.clients" :key="index">
-                                    <img class="h-10" v-bind:src="'images/clients/' + key + '.png'"
-                                         v-bind:alt="key">
+                                     v-for="(client,index) in this.clients" :key="index">
+                                    <img class="h-10" :src="require(`~/assets/img/${client}-logo.svg`)"
+                                         v-bind:alt="client.name">
                                 </div>
                             </div>
                         </div>
@@ -260,7 +260,7 @@ data(){
     return{
         years_in_service: 5,
         actual_year: 2021,
-        clients:[],
+        clients:['laravel','mirage','statamic','statickit','transistor','tuple'],
         team:[
             {
                 photo:'cmedina.jpg',

@@ -9,7 +9,7 @@
                         Nuestros Servicios
                     </span>
                 </h2>
-                <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500 text-justify">
+                <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500 text-center">
                     Ayudamos a  nuestros clientes a convertir grandes ideas en asombrosas aplicaciones, productos y servicios mediante nuestros servicios digitales.
                 </p> 
                 <div class="mt-24">

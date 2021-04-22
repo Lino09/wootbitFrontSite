@@ -11,7 +11,7 @@
                     </span>
                 </h2>
 
-                <p class="mt-5 mx-auto max-w-prose text-xl text-gray-500">
+                <p class="mt-5 mx-auto max-w-prose text-xl text-gray-500  text-center">
                     Hemos colaborado en proyectos de diferentes tamaños y complejidades.
 Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes y para nosotros mismos.
                 </p>
