@@ -64,7 +64,7 @@
                             <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
                                 <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
                                      v-for="(client,index) in this.clients" :key="index">
-                                    <img class="h-10" :src="require(`~/assets/img/${client}-logo.svg`)"
+                                    <img class="h-10" style="fill: red;" :src="require(`~/assets/img/${client}-logo.svg`)"
                                          v-bind:alt="client.name">
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                                             Soporte 24/7
                                         </h2>
                                         <p class="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
-                                            La fecha de lanzamiento no significa &#8221;Adiós&#8221;
+                                            La fecha de lanzamiento no significa &#8220;Adiós&#8221;
                                         </p>
                                         <p class="mt-3 text-lg text-gray-300 text-justify">
                                            Contamos con excelente soporte técnico e incluso después de la fecha de lanzamiento de tu proyecto continuaremos colaborando contigo, manteniendote a ti y a tus productos &#8220;online&#8221;.

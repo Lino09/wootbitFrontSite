@@ -27,8 +27,7 @@
     "@tailwindcss/forms": "^0.3.2",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
-    "swiper": "^6.5.7",
-    "vue-awesome-swiper": "^4.1.1",
+    "vue-carousel": "^0.18.0",
     "vue-scrollto": "^2.20.0",
     "vuelidate": "^0.7.6"
   },

@@ -16,10 +16,10 @@
 Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes y para nosotros mismos.
                 </p>
             </div>
-            <swiper ref="mySwiper" :options="swiperOptions" class=" mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8">
-                <swiper-slide v-for="(project, index) in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                    <div class="flex-shrink-0">
-                        <img class="h-48 w-full object-cover"
+            <carousel class=" mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
+                <slide v-for="(project, index) in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden px-2">
+                    <div class="flex-shrink-0 rounded-t-md">
+                        <img class="h-48 w-full object-cover rounded-t-md"
                              :src="project.attributes.picture"
                              alt="">
                     </div>
@@ -30,14 +30,14 @@ Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes 
                                     {{project.attributes.type}}
                                 </a>
                             </p>
-                            <a href="#" class="block mt-2">
+                            <!-- <a href="#" class="block mt-2"> -->
                                 <p class="text-xl font-semibold text-gray-900">
                                     {{project.attributes.name}}
                                 </p>
                                 <p class="mt-3 text-base text-gray-500">
                                     {{project.attributes.description}}
                                 </p>
-                            </a>
+                            <!-- </a> -->
                         </div>
                         <div class="mt-6 flex items-center">
                             <div class="flex-shrink-0">
@@ -68,26 +68,26 @@ Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes 
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper-slide>
-            </swiper>
+                </slide>
+            </carousel>
         </div>
     </div>
+
 </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
 name: "ProjectsSectionComponent",
 props:['projects'],
   components: {
-    Swiper,
-    SwiperSlide
+    Carousel,
+    Slide
   },
   directives: {
-    swiper: directive
+    
   },
   data () {
     return {
