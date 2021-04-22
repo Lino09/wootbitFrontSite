@@ -49,25 +49,35 @@
                     </div>
 
                     <!-- Logo cloud -->
-                    <div class="bg-gray-100">
-                        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                            <p class="text-center text-sm font-extrabold tracking-wide uppercase">
-                                <span class="">
-                                    Llevamos más de 5 años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
-                                </span>
-                            </p>
-                            <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide bg-gradient-to-r from-red-500 to-yellow-500">
-
-                            </p>
-                            <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
-                                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
-                                     v-for="(client,index) in this.clients" :key="index">
-                                    <img class="h-10" style="fill: red;" :src="require(`~/assets/img/${client}-logo.svg`)"
-                                         v-bind:alt="client.name">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <p class="text-center text-base font-bold uppercase text-gray-600 tracking-wider">
+        Llevamos más de 5 años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
+      </p>
+      <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Workcation" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit" />
+        </div>
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
+          <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic" />
+        </div>
+      </div>
+    </div>
+  </div>
+                    
+    
                 </div>
 
                 <div class="bg-white">

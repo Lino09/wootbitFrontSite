@@ -6,11 +6,11 @@
       </label>
       <div class="mt-1">
         <input @input="updateValue" 
+          class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md px-4 py-2"
           :name="label" 
           :id="label" 
           :value="value" 
           :placeholder="hint" 
-          class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md px-4 py-2"
           @blur="blurred">
 
           <div v-if="errors" class="text-xs text-red-500">
