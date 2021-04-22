@@ -51,8 +51,8 @@
                     <!-- Logo cloud -->
                     <div class="bg-gray-100">
                         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-                            <p class="text-center text-sm font-extrabold tracking-wide uppercase mb-16 lg:mb-0">
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-black">
+                            <p class="text-center text-sm font-extrabold tracking-wide uppercase">
+                                <span class="">
                                     Llevamos más de 5 años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
                                 </span>
                             </p>
@@ -269,16 +269,6 @@ data(){
                 photo:'aherrera.jpg',
                 position:'Testing y Desarrollo FrontEnd',
                 name:'Abel  Herrera' 
-            },
-            {
-                photo:'arivas.jpg',
-                position:'Diseñador Gráfico',
-                name:'Alex Rivas' 
-            },
-            {
-                photo:'arivas.jpg',
-                position:'Diseñador Gráfico',
-                name:'Alex Rivas' 
             },
             {
                 photo:'arivas.jpg',
