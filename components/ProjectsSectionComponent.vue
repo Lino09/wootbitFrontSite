@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="relative bg-gray-50 py-16 sm:py-24 lg:py-32" id="projects-section">
-        <div class="relative">
+        <div class="relative flex flex-col items-center">
             <div
                 class="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
 
@@ -16,7 +16,7 @@
 Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes y para nosotros mismos.
                 </p>
             </div>
-            <carousel :autoplay=[true,2000] :autoplayHoverPause="true" :perPageCustom="[[320,1],[600,2],[1024,3],[1440,4]]" class=" mt-12 px-4 max-w-7xl">
+            <carousel :autoplay=[true,2000] :autoplayHoverPause="true" :paginationColor="'#FADF9F'" :perPageCustom="[[320,1],[600,2],[1024,3],[1440,4]]" :paginationActiveColor="'#DA5D10'" :paginationSize="15" class=" mt-12 px-4 w-full max-w-7xl">
                 <slide v-for="(project, index) in projects" :key="index" class="flex flex-col rounded-lg shadow-lg overflow-hidden mb-8 px-1">
                     <div class="flex-shrink-0 rounded-t-md">
                         <img class="h-48 w-full object-cover rounded-t-md"
