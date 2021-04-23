@@ -98,10 +98,16 @@
                                             ¿Aún no existe la herramienta de software perfecta para tu negocio? ¡Nosotros la construimos!
                                         </p>
                                     </div>
-                                    <div class="mt-12 -mb-10 sm:-mb-24 lg:-mb-80">
-                                        <img class="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
-                                             src="https://tailwindui.com/img/component-images/green-project-app-screenshot.jpg"
-                                             alt="">
+
+                            <div class="my-8">
+                                    <carousel  :autoplay=[true,2000] :autoplayHoverPause="true" :paginationColor="'#FADF9F'" :perPageCustom="[[320,1],[600,1],[1024,1],[1440,1]]" :paginationActiveColor="'#DA5D10'" :paginationSize="15" >
+
+                                             <slide v-for="(img, index) in imgs" :key="index" ><img class="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
+                                             :src="require(`~/assets/photo/wootbitproyects/${img}.png`)"
+                                             alt=""></slide>
+                                             
+
+                                    </carousel>
                                     </div>
                                 </div>
                             </div>
@@ -251,6 +257,7 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
 export default {
 
    created() {
@@ -288,8 +295,13 @@ data(){
 
         ],
         projects: [],
-        services:[]
-}}
+        services:[],
+        imgs:['1-tvnikkenusa','2-mitiendanikken','3-porcelanika','4-residencialavandaro']
+}},
+components: {
+    Carousel,
+    Slide
+  },
 }
 </script>
 
