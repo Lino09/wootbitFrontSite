@@ -8,8 +8,10 @@
                     <div class="flex justify-start flex-none">
                         <a href="#">
                             <span class="sr-only">logo</span>
-                            <img class="md:h-8 lg:md-12 h-12"
+                            <img class="hidden lg:block lg:md-12 h-12"
                                  src="../static/letrasWtbt.png" alt="">
+                            <img class="lg:hidden w-12"
+                                 src="../static/wootbitiologo.png" alt="">
                         </a>
                     </div>
                     <div class="-mr-2 -my-2 md:hidden">
