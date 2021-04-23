@@ -5,7 +5,7 @@
                 <div class="flex justify-between items-center max-w-7xl
                             mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
 
-                    <div class="hidden justify-start flex-none">
+                    <div class="flex justify-start flex-none">
                         <a href="#">
                             <span class="sr-only">logo</span>
                             <img class="md:h-8 lg:md-12 h-12"
