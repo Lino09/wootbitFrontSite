@@ -5,10 +5,10 @@
                 <div class="flex justify-between items-center max-w-7xl
                             mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
 
-                    <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <div class="flex justify-start flex-none">
                         <a href="#">
-                            <span class="sr-only">Workflow</span>
-                            <img class="h-8 w-auto sm:h-10 object-fit"
+                            <span class="sr-only">logo</span>
+                            <img class="md:h-8 lg:md-12 h-12"
                                  src="../static/letrasWtbt.png" alt="">
                         </a>
                     </div>
@@ -38,7 +38,7 @@
                         </a>
 
                         <a href="#" v-scroll-to="'#services-section'"
-                           class="text-base font-medium text-gray-500 hover:text-gray-900 flex">
+                           class="text-base font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" class="w-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
