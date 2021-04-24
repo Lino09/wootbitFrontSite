@@ -100,7 +100,7 @@
                                     </div>
 
                             <div class="my-8">
-                                    <carousel  :autoplay=[true,2000] :autoplayHoverPause="true" :paginationColor="'#FADF9F'" :perPageCustom="[[320,1],[600,1],[1024,1],[1440,1]]" :paginationActiveColor="'#DA5D10'" :paginationSize="15" >
+                                    <carousel  :autoplay=true :autoplayHoverPause="true" :paginationColor="'#FADF9F'" :perPageCustom="[[320,1],[600,1],[1024,1],[1440,1]]" :paginationActiveColor="'#DA5D10'" :paginationSize="15" >
 
                                              <slide v-for="(img, index) in imgs" :key="index" ><img class="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
                                              :src="require(`~/assets/photo/wootbitproyects/${img}.png`)"

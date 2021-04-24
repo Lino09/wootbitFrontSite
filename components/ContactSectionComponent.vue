@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="relative">
         <div class="relative bg-white">
             <div class="lg:absolute lg:inset-0">
                 <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
@@ -37,7 +37,7 @@
                             ></text-area>
 
                             <div class="text-right sm:col-span-2">
-                                <button :disabled="$v.$invalid"
+                                <button :disabled="$v.$invalid && isDisabled"
                                 type="submit"
                                         class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                         :class="{ 'cursor-not-allowed': $v.$invalid}">
@@ -49,6 +49,7 @@
                 </div>
             </div>
         </div>
+        <alert :show="isVisible" :texto="msgResponse" :alertIndex="typeIndex"></alert>
       </div>
 </template>
 <script>
@@ -64,7 +65,11 @@ export default {
                 company:'',
                 phone:'',
                 message:'',
-                youAreABoot:''
+                youAreABoot:'',
+                isVisible:false,
+                msgResponse:'',
+                isDisabled:false,
+                typeIndex:0
 
         }
     },
@@ -104,11 +109,44 @@ export default {
                   "company": this.company,
                   "phone": this.phone,
                   "message": this.message
-                }
+                },
+                
               };
-               this.$axios.$post('/api/contact', data).then( response => console.log(response)).catch(error => console.log(error))
+               this.$axios.$post('/api/contact', data).then( response => 
+               {
+                this.isDisabled=true
+                   this.msgResponse = response.message
+                   this.typeIndex=0
+                   this.showNotice()               
+               }).catch(err => {
+                this.isDisabled=true
+                   this.msgResponse =err.response.data.message
+                   this.typeIndex=2
+                   this.showNotice()               
+               }).finally(
+                   function(){
+                       this.isDisabled=false
+                       this.clearForm()
+                   }.bind(this)
+               )
             }
-        }
+        },
+        showNotice(){
+            this.isVisible = true
+            setTimeout(function(){
+
+                this.isVisible = false
+            }.bind(this),5000);
+            },
+            clearForm(){
+                this.youAreABoot=''
+                  this.name=''
+                 this.email=''
+                  this.company=''
+                  this.phone=''
+                  this.message=''
+            }
+        
     }
 
 }
