@@ -5,14 +5,17 @@
       <span id="company_description" class="text-sm text-gray-500">Opcional</span>
     </div>
     <div class="mt-1">
-      <input @input="updateValue" type="text" :name="label" :id="label" autocomplete="organization"
+      <input 
+      @input="updateValue" 
+      type="text" 
+      :name="label" :id="label" autocomplete="organization"
         class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" :value="value" :placeholder="hint" >
     </div>
       <div v-if="errors" class="text-xs text-red-500">
           <p v-if="value.length >20">Máximo 20 Caracteres </p>
           </div>
   </div>
-</template>
+</template> 
 
 <script>
   export default {

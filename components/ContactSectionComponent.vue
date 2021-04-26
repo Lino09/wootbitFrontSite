@@ -23,17 +23,17 @@
                         <form action="#" method="POST" @submit.prevent="submit"
                               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 
-                            <base-input :requerido="$v.name.required" label="Nombre" v-model="name" hint="John Wootbit Doe" :errors="$v.name.$invalid" @blurred="$v.name.$touch()" :lenghtRequired="$v.name.minLength"></base-input >
+                            <base-input :requerido="$v.form.name.required" label="Nombre" v-model="form.name" hint="John Wootbit Doe" :errors="$v.form.name.$invalid" @blurred="$v.form.name.$touch()" :lenghtRequired="$v.form.name.minLength"></base-input >
 
-                            <base-input :requerido="$v.email.required" :tipo="$v.email.email" label="Email" v-model="email" hint="john@wootbit.io" :errors="$v.email.$invalid" @blurred="$v.email.$touch()"></base-input>
+                            <base-input :requerido="$v.form.email.required" :tipo="$v.form.email.email" label="Email" v-model="form.email" hint="john@wootbit.io" :errors="$v.form.email.$invalid" @blurred="$v.form.email.$touch()"></base-input>
 
-                            <opt-input label="Teléfono" hint="1234567890" v-model="phone" :lengthRequired="$v.phone.maxLength" :errors="$v.phone.$invalid"></opt-input>
-                            <opt-input label="Compañía" hint="Mi empresa" v-model="company" :lengthRequired="$v.company.maxLength" :errors="$v.company.$invalid"></opt-input>
+                            <opt-input label="Teléfono" hint="1234567890" v-model="form.phone" :lengthRequired="$v.form.phone.maxLength" :errors="$v.form.phone.$invalid"></opt-input>
+                            <opt-input label="Compañía" hint="Mi empresa" v-model="form.company" :lengthRequired="$v.form.company.maxLength" :errors="$v.form.company.$invalid"></opt-input>
                             
-                            <input class="invisible h-0" v-model="youAreABoot">
+                            <input class="invisible h-0" v-model="form.you_are_a_boot">
 
-                            <text-area v-model="message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.message.$touch()" :errors="$v.message.$invalid"
-                            :maxLength="$v.message.maxLength" :minLength="$v.message.minLength" :requerido="$v.message.required"
+                            <text-area v-model="form.message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.form.message.$touch()" :errors="$v.form.message.$invalid"
+                            :maxLength="$v.form.message.maxLength" :minLength="$v.form.message.minLength" :requerido="$v.form.message.required"
                             ></text-area>
 
                             <div class="text-right sm:col-span-2">
@@ -60,12 +60,14 @@ export default {
     name: "ContactSectionComponent",
     data(){
         return{
+            form:{
                name:'',
                 email:'',
                 company:'',
                 phone:'',
                 message:'',
-                youAreABoot:'',
+                you_are_a_boot:'',
+            },
                 isVisible:false,
                 msgResponse:'',
                 isDisabled:false,
@@ -74,12 +76,13 @@ export default {
         }
     },
     validations:{
-        name:{
+        form:{
+            name:{
             required,
             minLength: minLength(4),
             maxLength: maxLength(30)
-        },
-        email:{
+           },
+            email:{
             email,
             required,
             maxLength: maxLength(50)
@@ -95,6 +98,7 @@ export default {
         phone: {
             maxLength: maxLength(20)
         }
+        }
     },
     methods:{
         submit(){
@@ -102,14 +106,7 @@ export default {
             if(!this.$v.$invalid){
               const data = {
                 "type": "contact",
-                "attributes": {
-                  "you_are_a_boot": this.youAreABoot,
-                  "name": this.name,
-                  "email": this.email,
-                  "company": this.company,
-                  "phone": this.phone,
-                  "message": this.message
-                },
+                "attributes": this.form
                 
               };
                this.$axios.$post('/api/contact', data).then( response => 
