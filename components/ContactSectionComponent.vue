@@ -103,14 +103,13 @@ export default {
     },
     methods:{
         submit(){
+            this.$v.$touch()
+            if(!this.$v.$invalid && this.form.you_are_a_boot === ''){
             this.isDisabled=true
             this.sendStatus = 'Enviando'
             this.msgResponse = 'Enviando'
             this.typeIndex=1
             this.showNotice()
-
-            this.$v.$touch()
-            if(!this.$v.$invalid){
               const data = {
                 "type": "contact",
                 "attributes": this.form
@@ -122,14 +121,12 @@ export default {
                    this.typeIndex=0
                    this.showNotice()               
                }).catch(err => {
-                
                    this.msgResponse =err.response.data.message
                    this.typeIndex=2
                    this.showNotice()               
                }).finally(
                    function(){
                        this.isDisabled=false
-                       console.log(this.isDisabled, 'desblokiado')
                        this.clearForm()
                    }.bind(this)
                )
@@ -144,11 +141,11 @@ export default {
             },
             clearForm(){
                 this.form.you_are_a_boot=''
-                  this.form.name=''
-                 this.form.email=''
-                  this.form.company=''
-                  this.form.phone=''
-                  this.form.message=''
+                this.form.name=''
+                this.form.email=''
+                this.form.company=''
+                this.form.phone=''
+                this.form.message=''
                 this.sendStatus= 'Enviar'
             }
         

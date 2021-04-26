@@ -7,18 +7,24 @@
       <div v-if="show" class="max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden" :class=[alertType[alertIndex].bg]>
         <div class="p-4">
           <div class="flex items-start">
+<div :class=[alertType[alertIndex].txticon]>
+  <svg v-if="alertIndex===0" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
 
+<svg v-if="alertIndex===1" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+
+<svg v-if="alertIndex===2" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+</div>
             <div class="ml-3 w-0 flex-1 pt-0.5">
-              <p class="text-sm font-medium text-gray-900">
+              <p class="text-sm font-medium" :class=[alertType[alertIndex].txt]>
                 {{texto}}
               </p>
 
-            </div>
-            <div class="ml-4 flex-shrink-0 flex">
-              <button  class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <span class="sr-only">Close</span>
-                <!-- <XIcon class="h-5 w-5" aria-hidden="true" /> -->
-              </button>
             </div>
           </div>
         </div>
@@ -53,22 +59,22 @@ data(){
                   'type':'good',
                   'bg':'bg-indigo-100',
                   'border':'border-indigo-400',
-                  'txt':'text-indigo-700',
-                  'txthover':'hover:text-indigo-600',
+                  'txt':'text-indigo-800',
+                  'txticon':'text-indigo-600',
           },
           {
-                  'type':'meh',
+                  'type':'notice',
                   'bg':'bg-yellow-100',
                   'border':'border-yellow-400',
-                  'txt':'text-yellow-700',
-                  'txthover':'hover:text-yellow-600'
+                  'txt':'text-yellow-800',
+                  'txticon':'text-yellow-600'
           },
           {
                   'type':'bad',
                   'bg':'bg-red-100',
                   'border':'border-red-400',
-                  'txt':'text-red-700',
-                  'txthover':'hover:text-red-600'
+                  'txt':'text-red-800',
+                  'txticon':'text-red-600'
           },
 
           ]
