@@ -2,6 +2,12 @@ export default {
   env:{
     apiTokenWootbit: process.env.API_WTBT_TOKEN || ''
   },
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
