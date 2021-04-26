@@ -60,21 +60,21 @@ data(){
                   'bg':'bg-indigo-100',
                   'border':'border-indigo-400',
                   'txt':'text-indigo-800',
-                  'txticon':'text-indigo-600',
+                  'txticon':'text-indigo-500',
           },
           {
                   'type':'notice',
                   'bg':'bg-yellow-100',
                   'border':'border-yellow-400',
                   'txt':'text-yellow-800',
-                  'txticon':'text-yellow-600'
+                  'txticon':'text-yellow-500'
           },
           {
                   'type':'bad',
                   'bg':'bg-red-100',
                   'border':'border-red-400',
                   'txt':'text-red-800',
-                  'txticon':'text-red-600'
+                  'txticon':'text-red-500'
           },
 
           ]

@@ -2,10 +2,10 @@
     <div>
         <header>
             <div class="relative bg-white" id="home-section">
-                <div class="flex justify-between items-center max-w-7xl
+                <div class="flex justify-end items-center max-w-7xl
                             mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
 
-                    <div class="flex justify-start flex-none">
+                    <!-- <div class="flex justify-start flex-none">
                         <a href="#">
                             <span class="sr-only">logo</span>
                             <img class="hidden lg:block lg:md-12 h-12"
@@ -13,7 +13,7 @@
                             <img class="lg:hidden w-12"
                                  src="../static/wootbitiologo.png" alt="">
                         </a>
-                    </div>
+                    </div> -->
                     <div class="-mr-2 -my-2 md:hidden">
                         <button type="button"
                                 class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -28,8 +28,16 @@
                         </button>
                     </div>
 
-                    <nav class="hidden md:flex space-x-10 items-center">
-
+                    <nav class="hidden md:flex w-full space-x-10 items-center justify-center">
+<div class="flex justify-start flex-none">
+                        <a href="#">
+                            <span class="sr-only">logo</span>
+                            <img class="hidden lg:block lg:md-12 h-12"
+                                 src="../static/letrasWtbt.png" alt="">
+                            <img class="lg:hidden w-12"
+                                 src="../static/wootbitiologo.png" alt="">
+                        </a>
+                    </div>
                         <a href="#" class="font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap h-8 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" class="w-5">
@@ -112,7 +120,7 @@
                          class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
                         <div
                             class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                            <div class="pt-5 pb-6 px-5">
+                            <div class="pt-2 pb-6 px-4">
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <img class="h-8 w-auto"
