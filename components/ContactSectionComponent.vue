@@ -40,8 +40,8 @@
                                 <button :disabled="$v.$invalid && isDisabled"
                                 type="submit"
                                         class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                        :class="{ 'cursor-not-allowed': $v.$invalid}">
-                                    Enviar
+                                        :class="{ 'cursor-not-allowed': $v.$invalid,'bg-opacity-50 hover:bg-opacity-50': this.isDisabled}">
+                                    {{sendStatus}}
                                 </button>
                             </div>
                         </form>
@@ -71,7 +71,8 @@ export default {
                 isVisible:false,
                 msgResponse:'',
                 isDisabled:false,
-                typeIndex:0
+                typeIndex:0,
+                sendStatus: 'Enviar'
 
         }
     },
@@ -102,6 +103,12 @@ export default {
     },
     methods:{
         submit(){
+            this.isDisabled=true
+            this.sendStatus = 'Enviando'
+            this.msgResponse = 'Enviando'
+            this.typeIndex=1
+            this.showNotice()
+
             this.$v.$touch()
             if(!this.$v.$invalid){
               const data = {
@@ -111,18 +118,18 @@ export default {
               };
                this.$axios.$post('/api/contact', data).then( response => 
                {
-                this.isDisabled=true
                    this.msgResponse = response.message
                    this.typeIndex=0
                    this.showNotice()               
                }).catch(err => {
-                this.isDisabled=true
+                
                    this.msgResponse =err.response.data.message
                    this.typeIndex=2
                    this.showNotice()               
                }).finally(
                    function(){
                        this.isDisabled=false
+                       console.log(this.isDisabled, 'desblokiado')
                        this.clearForm()
                    }.bind(this)
                )
@@ -136,12 +143,13 @@ export default {
             }.bind(this),5000);
             },
             clearForm(){
-                this.youAreABoot=''
-                  this.name=''
-                 this.email=''
-                  this.company=''
-                  this.phone=''
-                  this.message=''
+                this.form.you_are_a_boot=''
+                  this.form.name=''
+                 this.form.email=''
+                  this.form.company=''
+                  this.form.phone=''
+                  this.form.message=''
+                this.sendStatus= 'Enviar'
             }
         
     }
