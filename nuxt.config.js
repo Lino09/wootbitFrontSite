@@ -75,13 +75,20 @@ export default {
     middleware: ['auth']
   },
   auth:{
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    },
     strategies:{
       'laravelSanctum':{
         provider: 'laravel/sanctum',
         url: process.env.API_WTBT_BASE_URL,
         endpoints:{
           login:{
-            url:'/api/login'
+            url:'/api/login',
+            propertyName: false,
           }
         }
       }

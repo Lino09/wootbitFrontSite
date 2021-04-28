@@ -113,6 +113,7 @@ export default {
             this.msgResponse = 'Enviando'
             this.typeIndex=1
             this.showNotice()
+            
               const data = {
                 "type": "contact",
                 "attributes": this.form

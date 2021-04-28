@@ -33,11 +33,11 @@
                                     <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                                         <div
                                             class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                                            <a href="#" v-scroll-to="'#team-section'"
+                                            <a v-scroll-to="'#team-section'" href="#" 
                                                class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8">
                                                 Conócenos
                                             </a>
-                                            <a href="#" v-scroll-to="'#contact-section'"
+                                            <a v-scroll-to="'#contact-section'" href="#"
                                                class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8">
                                                 Contáctanos
                                             </a>
@@ -103,7 +103,7 @@
 
                             <div class="my-8">
                                 <!-- CAROUSEL https://ssense.github.io/vue-carousel/guide/ -->
-                                    <carousel  :autoplay=true :autoplayHoverPause="true" :paginationColor="'#FADF9F'" :perPageCustom="[[320,1],[600,1],[1024,1],[1440,1]]" :paginationActiveColor="'#DA5D10'" :paginationSize="15" >
+                                    <carousel  :autoplay=true :autoplay-hover-pause="true" :pagination-color="'#FADF9F'" :per-page-custom="[[320,1],[600,1],[1024,1],[1440,1]]" :pagination-active-color="'#DA5D10'" :pagination-size="15" >
 
                                              <slide v-for="(img, index) in imgs" :key="index" ><img class="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
                                              :src="require(`~/assets/photo/wootbitproyects/${img}.png`)"
@@ -173,7 +173,7 @@
 
 
                             <!--TEAM SECTION-->
-                            <teams-section-component v-bind:team="team"></teams-section-component>
+                            <teams-section-component :team="team"></teams-section-component>
                             <!--END TEAM SECTION-->
 
 
@@ -263,25 +263,12 @@
 import { Carousel, Slide } from 'vue-carousel';
 // import { mapState } from 'vuex'
 export default {
-   auth: 'guest',
-   created() {
-       this.fetchProjects()
-    
-      this.currentDate()
-},
-methods:{
-    async fetchProjects(){
-    
-      await this.$axios.$get('/api/projects').then( response => {
-          this.projects = response.data
-      }).catch(error => console.log(error))
-    },
-    currentDate() {
-        const current = new Date();
-        const date = current.getFullYear()
-        this.actual_year = date
-    }
-},
+   auth: false,
+   
+components: {
+    Carousel,
+    Slide
+  },
 
 data(){
     return{
@@ -308,17 +295,47 @@ data(){
         ],
         projects: [],
         services:[],
-        imgs:['1-tvnikkenusa','2-mitiendanikken','3-porcelanika','4-residencialavandaro']
+        imgs:['1-tvnikkenusa','2-mitiendanikken','3-porcelanika','4-residencialavandaro'],
+        usertkn:''
 }},
-components: {
-    Carousel,
-    Slide
-  },
   computed:{
       yearsInService(){
           return this.actual_year - this.startYear
       }
-  }
+  },
+  created() {
+      this.updateUserTkn()
+     this.fetchProjects()
+      this.currentDate()
+},
+
+methods:{
+    async fetchProjects(){
+if(this.usertkn === ''){
+    this.$axios.setToken(process.env.apiTokenWootbit, 'Bearer')
+}else{
+     this.$axios.setToken(this.usertkn, 'Bearer')
+}
+
+
+      await this.$axios.$get('/api/projects').then( response => {
+          this.projects = response.data
+      }).catch(error => console.log(error))
+    },
+    currentDate() {
+        const current = new Date();
+        const date = current.getFullYear()
+        this.actual_year = date
+    },
+    updateUserTkn(){
+       try{
+           this.usertkn = this.$auth.$storage.getCookie('token') 
+           console.log(this.usertkn)
+       } catch(e){
+           console.log(e)
+       }
+    }
+}
 }
 </script>
 
