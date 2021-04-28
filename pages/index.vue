@@ -52,7 +52,9 @@
 <div class="bg-gray-100">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <p class="text-center text-base font-bold uppercase text-gray-600 tracking-wider">
-        Llevamos más de 5 años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
+        Llevamos más de 
+        {{yearsInService}}
+         años trabajando de la mano con nuestros clientes, potenciando sus fortalezas mediante medios digitales.
       </p>
       <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
         <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-200">
@@ -229,7 +231,7 @@
                 </div>
             </main>
 
-            <footer-section-component v-bind:actual_year="actual_year"></footer-section-component>
+            <footer-section-component></footer-section-component>
         </div>
 
 
@@ -259,10 +261,13 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
+// import { mapState } from 'vuex'
 export default {
-
+   auth: 'guest',
    created() {
        this.fetchProjects()
+    
+      this.currentDate()
 },
 methods:{
     async fetchProjects(){
@@ -270,12 +275,18 @@ methods:{
       await this.$axios.$get('/api/projects').then( response => {
           this.projects = response.data
       }).catch(error => console.log(error))
+    },
+    currentDate() {
+        const current = new Date();
+        const date = current.getFullYear()
+        this.actual_year = date
     }
 },
+
 data(){
     return{
-        years_in_service: 5,
         actual_year: 2021,
+        startYear: 2016,
         clients:['laravel','mirage','statamic','statickit','transistor','tuple'],
         team:[
             {
@@ -289,7 +300,7 @@ data(){
                 name:'Abel  Herrera' 
             },
             {
-                photo:'arivas.jpg',
+                photo:'alexrivas.jpeg',
                 position:'Diseñador Gráfico',
                 name:'Alex Rivas' 
             }
@@ -303,6 +314,11 @@ components: {
     Carousel,
     Slide
   },
+  computed:{
+      yearsInService(){
+          return this.actual_year - this.startYear
+      }
+  }
 }
 </script>
 

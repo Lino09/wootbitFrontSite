@@ -54,7 +54,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [['vue-scrollto/nuxt', { duration: 300 }],'@nuxtjs/axios',],
+  modules: [['vue-scrollto/nuxt', { duration: 300 }],'@nuxtjs/axios','@nuxtjs/auth-next'],
 
   axios: {
     baseURL: process.env.API_WTBT_BASE_URL, // Used as fallback if no runtime config is provided,
@@ -71,4 +71,21 @@ export default {
   build: {
    
   },
+  router: {
+    middleware: ['auth']
+  },
+  auth:{
+    strategies:{
+      'laravelSanctum':{
+        provider: 'laravel/sanctum',
+        url: process.env.API_WTBT_BASE_URL,
+        endpoints:{
+          login:{
+            url:'/api/login'
+          }
+        }
+      }
+    }
+  }
+
 }

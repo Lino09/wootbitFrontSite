@@ -11,13 +11,14 @@
           :name="label" 
           :value="value" 
           :placeholder="hint"
-          type="text"
+          :type="tipo"
           @input="updateValue" 
           @blur="blurred">
           <div v-if="errors" class="text-xs text-red-500">
           <p v-if="!requerido">El {{label}} es requerido</p>
-          <p v-if="!tipo">Debe ser un formato válido</p>
-          <p v-if="!lenghtRequired">Mínimo 4 Caracteres </p>
+          <p v-if="!typeMail">Debe ser un formato válido</p>
+          <p v-if="!lengthRequired">Mínimo 4 Caracteres </p>
+          <p v-if="!maxLengthRequired">Máximo {{maxLengthAmount}} Caracteres </p>
           </div>
       
     </div>
@@ -39,7 +40,7 @@ props:{
         type: [String, Number],
         default:''
     },
-   lenghtRequired:{
+   lengthRequired:{
         type: Boolean,
         default:true
     },
@@ -48,13 +49,25 @@ props:{
       defaul: true
     },
     tipo:{
-      type: Boolean,
-      default: true
+      type: String,
+      default: 'text'
+    },
+    typeMail:{
+    type: Boolean,
+    default: true
     }
     ,
     errors:{
       type: Boolean,
       default: false
+    },
+    maxLengthRequired:{
+      type: Boolean,
+      default: true
+    },
+    maxLengthAmount:{
+      type: Number,
+      default: 50
     }
   },
     data(){

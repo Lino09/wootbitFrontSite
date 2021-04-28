@@ -79,8 +79,22 @@
 
 <script>
 export default {
-    props: ['actual_year'],
-    name: "FooterSectionComponent"
+    props: [],
+    name: "FooterSectionComponent",
+
+created(){
+
+        const current = new Date();
+        const date = current.getFullYear()
+        this.actual_year = date
+    
+},
+data(){
+    return{
+
+        actual_year:2022
+    }
+}
 }
 </script>
 

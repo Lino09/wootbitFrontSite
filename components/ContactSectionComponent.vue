@@ -20,27 +20,30 @@
                         <p class="mt-4 text-lg text-gray-500 sm:mt-3">
                             ¡Nos encantaría saber de ti!, Envíanos un mensaje para saber más de tu idea de proyecto.
                         </p>
-                        <form action="#" method="POST" @submit.prevent="submit"
-                              class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                        <form 
+                        action="#" 
+                        method="POST" 
+                        class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                        @submit.prevent="submit"
+                        >
 
-                            <base-input :requerido="$v.form.name.required" label="Nombre" v-model="form.name" hint="John Wootbit Doe" :errors="$v.form.name.$invalid" @blurred="$v.form.name.$touch()" :lenghtRequired="$v.form.name.minLength"></base-input >
+                            <base-input v-model="form.name" :requerido="$v.form.name.required" label="Nombre"  hint="John Wootbit Doe" :errors="$v.form.name.$invalid"  :length-required="$v.form.name.minLength" :max-length-required="$v.form.name.maxLength" :max-length-amount="30"  @blurred="$v.form.name.$touch()"></base-input >
 
-                            <base-input :requerido="$v.form.email.required" :tipo="$v.form.email.email" label="Email" v-model="form.email" hint="john@wootbit.io" :errors="$v.form.email.$invalid" @blurred="$v.form.email.$touch()"></base-input>
+                            <base-input v-model="form.email" :requerido="$v.form.email.required" :tipo="'email'" :type-mail="$v.form.email.email" label="Email" hint="john@wootbit.io" :errors="$v.form.email.$invalid" :max-length-required="$v.form.email.maxLength" :max-length-amount="50" @blurred="$v.form.email.$touch()"></base-input>
 
-                            <opt-input label="Teléfono" hint="1234567890" v-model="form.phone" :lengthRequired="$v.form.phone.maxLength" :errors="$v.form.phone.$invalid"></opt-input>
-                            <opt-input label="Compañía" hint="Mi empresa" v-model="form.company" :lengthRequired="$v.form.company.maxLength" :errors="$v.form.company.$invalid"></opt-input>
+                            <opt-input v-model="form.phone" label="Teléfono" hint="1234567890" :length-required="$v.form.phone.maxLength" :errors="$v.form.phone.$invalid"></opt-input>
+                            <opt-input v-model="form.company" label="Compañía" hint="Mi empresa" :length-required="$v.form.company.maxLength" :errors="$v.form.company.$invalid"></opt-input>
                             
-                            <input class="invisible h-0" v-model="form.you_are_a_boot">
+                            <input v-model="form.you_are_a_boot" class="invisible h-0" >
 
-                            <text-area v-model="form.message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" @blurred="$v.form.message.$touch()" :errors="$v.form.message.$invalid"
-                            :maxLength="$v.form.message.maxLength" :minLength="$v.form.message.minLength" :requerido="$v.form.message.required"
-                            ></text-area>
+                            <text-area v-model="form.message" label="¿Qué podemos hacer por ti?" hint="Mensaje aquí" :errors="$v.form.message.$invalid"
+                            :max-length="$v.form.message.maxLength" :min-length="$v.form.message.minLength" :requerido="$v.form.message.required"                         @blurred="$v.form.message.$touch()"></text-area>
 
                             <div class="text-right sm:col-span-2">
                                 <button :disabled="$v.$invalid && isDisabled"
                                 type="submit"
                                         class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                        :class="{ 'cursor-not-allowed': $v.$invalid,'bg-opacity-50 hover:bg-opacity-50': this.isDisabled}">
+                                        :class="{ 'cursor-not-allowed': $v.$invalid,'bg-opacity-50 hover:bg-opacity-50': isDisabled}">
                                     {{sendStatus}}
                                 </button>
                             </div>
@@ -49,15 +52,15 @@
                 </div>
             </div>
         </div>
-        <alert :show="isVisible" :texto="msgResponse" :alertIndex="typeIndex"></alert>
+        <alert :show="isVisible" :texto="msgResponse" :alert-index="typeIndex"></alert>
       </div>
 </template>
 <script>
 import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 import BaseInput from './BaseInput.vue';
 export default {
-  components: { BaseInput},
     name: "ContactSectionComponent",
+  components: { BaseInput},
     data(){
         return{
             form:{
