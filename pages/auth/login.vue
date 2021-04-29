@@ -84,7 +84,7 @@ import FooterSectionComponent from '~/components/FooterSectionComponent.vue'
 // import { mapState} from 'vuex'
 
 export default {
-     auth: 'guest',
+     auth: false,
     name:'Login',
   components: {
     FooterSectionComponent
