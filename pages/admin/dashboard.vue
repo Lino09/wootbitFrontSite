@@ -8,7 +8,6 @@
 <script>
 export default {
   methods:{
-  
     logout(){
       this.$auth.strategy.token.set('Bearer '+ this.$auth.$storage.getCookie('token'))
       const userId = this.$auth.$storage.getLocalStorage('user').id 

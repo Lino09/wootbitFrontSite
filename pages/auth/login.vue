@@ -1,16 +1,16 @@
 <template>
 <div class="flex flex-col w-full">
   <div class="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-4 bg-gray-50 px-2 py-4 rounded-lg">
+    <div class="max-w-md w-full space-y-4 bg-gray-50 px-2 py-8 rounded-lg border">
       <div>
         <img class="mx-auto h-12 w-auto sm:hidden" src="../../static/wootbitiologo.png" alt="LogoWootbit" />
         <img class="mx-auto h-12 w-auto hidden sm:block" src="../../static/letrasWtbt.png" alt="LogoWootbit" />
         
        
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-800">
+        <!-- <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-800">
           Area de personal
           
-        </h2>
+        </h2> -->
         <p class="mt-2 text-center text-sm text-gray-600">
         Inicio de Sesión
           
@@ -19,9 +19,9 @@
           </a>
         </p>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST"  @submit.prevent="submit">
+      <form class="mt-8 space-y-6 ml-6" action="#" method="POST"  @submit.prevent="submit">
         <input type="hidden" name="remember" value="true" />
-        <div class="rounded-md shadow-sm space-y-4">
+        <div class="rounded-md  space-y-4">
           <div>
             <base-input class="mr-6" v-model="login_form.email" :tipo="'email'" :label="'Email'" :hint="'Email Address'"></base-input>
             <!-- <label for="email-address" class="sr-only">Email address</label>
@@ -60,7 +60,7 @@
           </div> -->
         </div>
 
-        <div>
+        <div class="pr-6">
           <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-600 to-red-600 hover:bg-gradient-to-r hover:from-red-500 hover:to-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
               <!-- <LockClosedIcon class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" /> -->
@@ -125,8 +125,8 @@ this.$auth.loginWith('laravelSanctum',{
 }).then(response => {
   alert(response.data.meta.token)
   this.$auth.$storage.setCookie('token', response.data.meta.token,false)
-  this.$auth.setUser(response.data.data.attributes)
   this.$auth.$storage.setLocalStorage('user', response.data.data.attributes)
+  this.$auth.setUser(response.data.data.attributes)
   this.$router.push({name: 'admin-dashboard'})
  
 }

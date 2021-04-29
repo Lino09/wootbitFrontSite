@@ -253,15 +253,15 @@ export default {
     methods:{
         isThereAnAdmin(){
             if( this.$auth.$storage.getLocalStorage('user')){
-                console.log(this.$auth.$storage.getLocalStorage('user'), true)
+                console.log( 'Hola admin',this.$auth.$storage.getLocalStorage('user').name)
                 this.isAdmin[0] = '/admin/dashboard'
                 this.isAdmin[1]= 'Dashboard'
             }else{
-                console.log(this.$auth.$storage.getLocalStorage('user'), false)
+                console.log(this.$auth.$storage.getLocalStorage('user'), 'Hola invitado')
                  this.isAdmin[0] = '/auth/login'
                 this.isAdmin[1]= 'Sign in'
             }
-            console.log(this.isAdmin)
+            
         }
     }
 }
