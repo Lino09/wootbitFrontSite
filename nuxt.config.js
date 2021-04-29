@@ -90,7 +90,8 @@ export default {
           login:{
             url:'/api/login',
             propertyName: false,
-          }
+          },
+          user: false
         }
       }
     }

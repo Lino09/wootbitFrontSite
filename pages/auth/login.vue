@@ -125,7 +125,6 @@ this.$auth.loginWith('laravelSanctum',{
 }).then(response => {
   this.$auth.$storage.setCookie('token', response.data.data.token,false)
   this.$store.dispatch('storeAuth/change_token', response.data.data.token)
-  this.$axios.setToken(this.usertkn, 'Bearer')
   // this.$router.push('../admin/panel')
 }
 ).catch(error=> {
