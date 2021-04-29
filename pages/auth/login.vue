@@ -123,8 +123,9 @@ this.$auth.loginWith('laravelSanctum',{
     password: this.login_form.password
   }
 }).then(response => {
-  this.$auth.$storage.setCookie('token', response.data.data.token,false)
-  this.$auth.setUser(response.data.data)
+  alert(response.data.meta.token)
+  this.$auth.$storage.setCookie('token', response.data.meta.token,false)
+  this.$auth.setUser(response.data.data.attributes)
   this.$router.push({name: 'admin-dashboard'})
  
 }
