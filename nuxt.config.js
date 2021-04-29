@@ -75,7 +75,12 @@ export default {
     middleware: ['auth']
   },
   auth:{
-    redirect:false,
+    redirect: {
+      login: '/auth/login',
+      logout: '/',
+      callback: '/auth/login',
+      home: '/'
+    },
     strategies:{
       'laravelSanctum':{
         provider: 'laravel/sanctum',
@@ -84,7 +89,9 @@ export default {
           login:{
             url:'/api/login',
           },
-          
+          logout:{
+            url:'/api/logout'
+          },
           user: false
         }
       }
