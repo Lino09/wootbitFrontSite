@@ -85,6 +85,7 @@ export default {
       'laravelSanctum':{
         provider: 'laravel/sanctum',
         url: process.env.API_WTBT_BASE_URL,
+        
         endpoints:{
           login:{
             url:'/api/login',

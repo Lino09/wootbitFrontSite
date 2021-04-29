@@ -7,10 +7,11 @@
 
 <script>
 export default {
-
+auth: false,
   methods:{
   
     async logout(){
+      this.$auth.strategy.token.set('Bearer '+this.$auth.$storage.getCookie('token'))
       const userId = this.$auth.$storage.getLocalStorage('user') 
       await this.$auth.logout('laravelSanctum',{
   data:{
