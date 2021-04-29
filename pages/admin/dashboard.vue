@@ -1,5 +1,5 @@
 <template>
-<div class=" h-screen w-screen flex justify-center items-center">
+<div class=" h-screen w-screen flex flex-col justify-center items-center">
   <h1>THIS IS THE ADMIN PANEL PRRO</h1>
   <button class="my-8 p-2 bg-red-500 font-bold text-sm text-white" @click="logout">Logout</button>
 </div>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  auth: false,
+
   methods:{
   
     async logout(){
