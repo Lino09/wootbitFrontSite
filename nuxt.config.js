@@ -78,7 +78,7 @@ export default {
     redirect: {
       login: '/auth/login',
       logout: '/',
-      callback: '/panel/dashboard',
+      callback: false,
     },
     strategies:{
       'laravelSanctum':{
@@ -88,9 +88,7 @@ export default {
           login:{
             url:'/api/login',
           },
-          logout:{
-            url:'/api/logout'
-          },
+          logout:false,
           user: false
         }
       }
