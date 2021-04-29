@@ -84,7 +84,7 @@ import FooterSectionComponent from '~/components/FooterSectionComponent.vue'
 // import { mapState} from 'vuex'
 
 export default {
-     auth: false,
+     auth: 'guest',
     name:'Login',
   components: {
     FooterSectionComponent
@@ -125,7 +125,7 @@ this.$auth.loginWith('laravelSanctum',{
 }).then(response => {
   this.$auth.$storage.setCookie('token', response.data.data.token,false)
   this.$auth.setUser(response.data.data)
-  this.$router.push('../admin/dashboard')
+  this.$router.push({name: 'admin-dashboard'})
  
 }
 ).catch(error=> {
