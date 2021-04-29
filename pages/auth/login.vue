@@ -126,6 +126,7 @@ this.$auth.loginWith('laravelSanctum',{
   this.$auth.$storage.setCookie('token', response.data.data.token,false)
   this.$auth.setUser(response.data.data)
   alert(response.data.data.token)
+  console.log(response.data.data.token)
   // this.$router.push('../admin/panel')
  
 }
