@@ -1,5 +1,4 @@
 export default {
-  mode: 'spa',
   env:{
     apiTokenWootbit: process.env.API_WTBT_TOKEN || ''
   },
@@ -89,7 +88,6 @@ export default {
         endpoints:{
           login:{
             url:'/api/login',
-            propertyName: false,
           },
           user: false
         }
