@@ -7,7 +7,6 @@
 
 <script>
 export default {
-auth: false,
   methods:{
   
     logout(){
