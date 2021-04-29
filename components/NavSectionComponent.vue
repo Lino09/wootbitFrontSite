@@ -245,7 +245,7 @@ export default {
             isAdmin:[],
         }
     },
-    mounted(){
+    created(){
         this.isThereAnAdmin()
     },
     computed:{
@@ -261,6 +261,7 @@ export default {
                  this.isAdmin[0] = '/auth/login'
                 this.isAdmin[1]= 'Sign in'
             }
+            console.log(this.isAdmin)
         }
     }
 }
