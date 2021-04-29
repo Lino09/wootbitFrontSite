@@ -311,7 +311,8 @@ data(){
 
 methods:{
     async fetchProjects(){
-if(this.usertkn === ''){
+       
+if(!this.usertkn){
     this.$axios.setToken(process.env.apiTokenWootbit, 'Bearer')
 }else{
      this.$axios.setToken(this.usertkn, 'Bearer')
@@ -330,9 +331,8 @@ if(this.usertkn === ''){
     updateUserTkn(){
        try{
            this.usertkn = this.$auth.$storage.getCookie('token') 
-           console.log(this.usertkn)
        } catch(e){
-           console.log(e)
+           console.log(e, 'que pedo que pedo')
        }
     }
 }

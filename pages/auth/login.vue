@@ -114,7 +114,6 @@ return{
    }
   },
  methods:{
-   
    submit(){
     this.errors=[]
     this.thereAreErrors = false
@@ -127,7 +126,6 @@ this.$auth.loginWith('laravelSanctum',{
   this.$auth.$storage.setCookie('token', response.data.data.token,false)
   this.$store.dispatch('storeAuth/change_token', response.data.data.token)
   this.$router.push('../admin/panel')
-  this.$auth.loggedIn = true
 }
 ).catch(error=> {
   this.thereAreErrors = true
