@@ -12,11 +12,11 @@ auth: false,
   
     async logout(){
       this.$auth.strategy.token.set('Bearer '+ this.$auth.$storage.getCookie('token'))
-      const userId = this.$auth.$storage.getLocalStorage('user') 
+      const userId = this.$auth.$storage.getLocalStorage('user').id 
       console.log(userId)
       await this.$auth.logout('laravelSanctum',{
   data:{
-    user: userId.id
+    id: userId
   }}).then(response => {
     console.log(response, 'logout')
     this.$auth.$storage.removeLocalStorage('user')
