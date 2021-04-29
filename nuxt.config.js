@@ -88,7 +88,7 @@ export default {
           login:{
             url:'/api/login',
           },
-          logout:false,
+          
           user: false
         }
       }
