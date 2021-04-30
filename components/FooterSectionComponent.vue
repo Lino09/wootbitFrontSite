@@ -4,31 +4,31 @@
             <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
                 <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     <div class="px-5 py-2">
-                        <a href="#" v-scroll-to="'#home-section'" class="text-base text-gray-400 hover:text-gray-100">
+                        <a href="/" class="text-base text-gray-400 hover:text-gray-100">
                             Inicio
                         </a>
                     </div>
 
-                    <div class="px-5 py-2">
+                    <div v-if="!isLoggin" class="px-5 py-2">
                         <a href="#" v-scroll-to="'#services-section'"
                            class="text-base text-gray-400 hover:text-gray-100">
                             Servicios
                         </a>
                     </div>
 
-                    <div class="px-5 py-2">
+                    <div v-if="!isLoggin" class="px-5 py-2">
                         <a href="#" v-scroll-to="'#projects-section'" class="text-base text-gray-400 hover:text-gray-100">
                             Proyectos
                         </a>
                     </div>
 
-                    <div class="px-5 py-2">
+                    <div v-if="!isLoggin" class="px-5 py-2">
                         <a href="#" v-scroll-to="'#team-section'" class="text-base text-gray-400 hover:text-gray-100">
                             Nosotros
                         </a>
                     </div>
 
-                    <div class="px-5 py-2">
+                    <div v-if="!isLoggin" class="px-5 py-2">
                         <a href="#" v-scroll-to="'#contact-section'"
                            class="text-base text-gray-400 hover:text-gray-100">
                             Contacto
@@ -79,7 +79,12 @@
 
 <script>
 export default {
-    props: [],
+    props: {
+        isLoggin:{
+            type: Boolean,
+            default: false
+        }
+    },
     name: "FooterSectionComponent",
 
 created(){

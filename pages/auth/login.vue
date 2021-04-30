@@ -75,7 +75,7 @@
     </div>
     
   </div>
-    <footer-section-component ></footer-section-component>
+    <footer-section-component  :is-loggin="true"></footer-section-component>
 </div>
 </template>
 
@@ -99,7 +99,8 @@ return{
    viewPass: false,
    errors:['one error here','one error here','one error here','one error here','one error here'],
    thereAreErrors: false,
-   errorMessage: ''
+   errorMessage: '',
+   
 }
   },
   
@@ -123,7 +124,6 @@ this.$auth.loginWith('laravelSanctum',{
     password: this.login_form.password
   }
 }).then(response => {
-  alert(response.data.meta.token)
   this.$auth.$storage.setCookie('token', response.data.meta.token,false)
   this.$auth.$storage.setLocalStorage('user', response.data.data.attributes)
   this.$auth.setUser(response.data.data.attributes)

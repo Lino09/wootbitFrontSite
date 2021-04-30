@@ -24,7 +24,6 @@
               <p class="text-sm font-medium" :class=[alertType[alertIndex].txt]>
                 {{texto}}
               </p>
-
             </div>
           </div>
         </div>
@@ -82,6 +81,13 @@ data(){
       }
   },
 methods:{
+},
+watch:{
+  show(){
+    setTimeout(() => {
+      this.$emit('alertTimedOut')
+    }, 5000);
+}
 }
 }
 </script>

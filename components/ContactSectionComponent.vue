@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <alert :show="isVisible" :texto="msgResponse" :alert-index="typeIndex"></alert>
+        <alert @alertTimedOut="hideNotice" :show="isVisible" :texto="msgResponse" :alert-index="typeIndex"></alert>
       </div>
 </template>
 <script>
@@ -138,11 +138,11 @@ export default {
         },
         showNotice(){
             this.isVisible = true
-            setTimeout(function(){
-
-                this.isVisible = false
-            }.bind(this),5000);
             },
+            hideNotice(){
+                this.isVisible = false
+            },
+
             clearForm(){
                 this.form.you_are_a_boot=''
                 this.form.name=''
