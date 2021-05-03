@@ -48,7 +48,7 @@
 
       <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
         <div class="flex-shrink-0 flex items-center px-4">
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
+          <img class="h-8 w-auto" src="../static/wootbitiologo.png" alt="Wootbit.io-logo">
         </div>
         <nav class="mt-5 px-2 space-y-1">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -135,9 +135,13 @@
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex flex-col h-0 flex-1 bg-gray-800">
         <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+          <a href="/">
+
           <div class="flex items-center flex-shrink-0 px-4">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
+            <img class="h-8 w-auto" src="../static/wootbitiologo.png" alt="Wootbit.io-logo">
+            <img class="h-8 w-auto ml-2" src="../static/letrasWtbt.png" alt="Wootbit">
           </div>
+          </a>
           <nav class="mt-5 flex-1 px-2 bg-gray-800 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="/admin/dashboard" :class="{'bg-gray-900 text-white': (routeName=='/admin/dashboard'),'text-gray-300': !(routeName=='/admin/dashboard') }" class="hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
@@ -224,12 +228,12 @@
         </svg>
       </button>
     </div>
-    <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none">
+    <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none bg-gray-200">
       <div class="py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 bg-gray-200">
           <!-- Replace with your content -->
           <Nuxt />
         </div>

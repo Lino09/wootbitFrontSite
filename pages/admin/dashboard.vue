@@ -8,7 +8,8 @@
 <script>
 export default {
   layout: 'admin',
-  auth:false,
+  auth: false
+ 
   
 
 }
