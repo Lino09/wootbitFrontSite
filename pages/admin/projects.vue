@@ -1,6 +1,6 @@
 <template>
-  <div class="mt-8">
-    <button
+  <div class="mt-8 focus:ourline-none" >
+    <button @click.prevent="editProject(project)"
       class=" p-2 rounded-lg border font-bold bg-yellow-600 hover:bg-yellow-500 hover:text-white text-yellow-100 active:outline-none focus:outline-none">Add
       Project</button>
     <ul class="flex flex-wrap mt-4">
@@ -56,14 +56,16 @@
           </div>
           <div class="flex w-full justify-end">
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-green-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
+            <svg 
+            @click.prevent="editProject(project)" xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-green-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
 
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-red-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
+            <svg 
+            xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-red-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -72,6 +74,7 @@
         </div>
       </li>
     </ul>
+    <edit-project-component @saveitplease="toggleEditView" @closeplease="cierraEditView" :editable="editable" :edit-view="editView"></edit-project-component>
   </div>
 </template>
 
@@ -87,7 +90,9 @@
     data() {
       return {
         usertkn: '',
-        projects: []
+        projects: [],
+        editable:{},
+        editView: false,
       }
     },
     methods: {
@@ -96,6 +101,7 @@
         this.$axios.setToken(this.usertkn, 'Bearer')
         await this.$axios.$get('/api/projects').then(response => {
           this.projects = response.data
+          console.log(response)
         }).catch(error => console.log(error))
       },
       updateUserTkn() {
@@ -104,8 +110,19 @@
         } catch (e) {
           console.log(e, 'que pedo que pedo')
         }
-      }
-    }
+      },
+    editProject(project){
+    this.editable = project
+    this.toggleEditView()
+  },
+  toggleEditView(){
+      this.editView = !this.editView
+  },
+   cierraEditView(){
+      this.editView = false
+      this.$forceUpdate();
+  }
+    },
   }
 
 </script>
