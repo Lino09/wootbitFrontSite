@@ -45,6 +45,7 @@
         <label for="technologies_used">Technologies Used</label>
         <input class="rounded-md" id="technologies_used" type="text" v-model="project.attributes.technologies_used">
       </div>
+      <input class="col-span-2" type="file" @change="onFileSelected">
       </div>
        
      </div>
@@ -77,6 +78,7 @@ export default {
                 client_name: '',
                 technologies_used: '',
                 description: '',
+                photo:''
               }
             }
         },
@@ -95,7 +97,8 @@ export default {
                 type: '',
                 client_name: '',
                 technologies_used: '',
-                description: ''
+                description: '',
+                photo:''
                 }
     }
     }
@@ -106,6 +109,10 @@ export default {
         },
         saveit(){
             this.$emit('saveitplease')
+        },
+        onFileSelected(event){
+          this.project.photo = event.target.files[0]
+
         }
     },
     watch:{
