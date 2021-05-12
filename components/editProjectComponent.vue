@@ -51,10 +51,10 @@
      </div>
        
       <div class="mt-5 sm:mt-6 flex">
-        <button @click="saveit" class="mx-2 inline-flex justify-center w-2/3 rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
+        <button @click.prevent="saveChanges(project)" tupe="button" class="mx-2 inline-flex justify-center w-2/3 rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
           Guardar Cambios
         </button>
-        <button @click="closeit" class="mx-2 inline-flex justify-center w-1/3 rounded-md border border-indigo-500  px-4 py-2 text-base font-medium text-indigo-600  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
+        <button @click.prevent="closeit" tupe="button" class="mx-2 inline-flex justify-center w-1/3 rounded-md border border-indigo-500  px-4 py-2 text-base font-medium text-indigo-600  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
           Cancelar
         </button>
       </div>
@@ -71,14 +71,13 @@ export default {
     props:{
         editable:{
             default:{
-              id: 0,
+              id: null,
               attributes:{
                 name: '',
                 type: '',
                 client_name: '',
                 technologies_used: '',
                 description: '',
-                photo:''
               }
             }
         },
@@ -91,14 +90,14 @@ export default {
     data(){
       return{
         project: {
-          id: 0,
+          id: null,
               attributes:{
                 name: '',
                 type: '',
                 client_name: '',
                 technologies_used: '',
                 description: '',
-                photo:''
+                photo:'',
                 }
     }
     }
@@ -107,17 +106,51 @@ export default {
         closeit(){
             this.$emit('closeplease')
         },
-        saveit(){
-            this.$emit('saveitplease')
-        },
         onFileSelected(event){
-          this.project.photo = event.target.files[0]
+          this.project.attributes.photo = event.target.files[0]
+
+        },
+        saveChanges(){
+         
+         const data = new FormData()
+         const json = JSON.stringify({
+           
+           name: this.project.attributes.name,
+           type: this.project.attributes.type,
+           client_name: this.project.attributes.client_name,
+           echnologies_used: this.project.attributes.technologies_used,
+           description: this.project.attributes.description
+         })
+        
+         data.append('data', json)
+         data.append('json/photo', this.project.attributes.photo)
+         for (const value of data.values()) {
+   console.log(value);
+}
+         // Diferencia entre crear nuevo y editar existente
+        if(this.project.id === null){
+          this.$axios.$post("/api/projects", data).then(response=>{
+            console.log(response)
+            this.$store.commit('updateNewProject', this.project)
+            this.$emit('addNewProject')
+          }).catch(error=>console.log(error)).finally( ()=> this.$emit('closeplease'))
+        }else{
+           this.$axios.$put("/api/projects/" + this.project.id, data).then(response=> {
+             console.log(response)
+             
+             }).catch(error=>console.log(error)).finally( ()=> this.$emit('closeplease'))
+        }
 
         }
     },
     watch:{
       editable(){
-        this.project = this.editable
+        this.project.id = this.editable.id
+        this.project.attributes.name  = this.editable.attributes.name
+        this.project.attributes.type  = this.editable.attributes.type
+        this.project.attributes.client_name  = this.editable.attributes.client_name
+        this.project.attributes.technologies_used  = this.editable.attributes.technologies_used
+        this.project.attributes.description  = this.editable.attributes.description
       }
     }
 
