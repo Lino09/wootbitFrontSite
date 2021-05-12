@@ -33,7 +33,13 @@
       <div class="flex flex-col w-full ">
 
         <label for="type">Type</label>
-        <input class="rounded-md" id="type" type="text" v-model="project.attributes.type">
+        <select class="rounded-md" id="type" v-model="project.attributes.type">
+          <option disabled value="">Selecciona tipo</option>
+          <option>WebSite</option>
+          <option>Photo</option>
+          <option>Video</option>
+          <option>Mobile App</option>
+        </select>
       </div>
       <div class="flex flex-col w-full ">
         

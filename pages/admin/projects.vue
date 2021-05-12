@@ -1,6 +1,6 @@
 <template>
   <div class="mt-8 focus:ourline-none" >
-    <button @click.prevent="toggleEditView"
+    <button @click.prevent="editProject(project)"
       class=" p-2 rounded-lg border font-bold bg-yellow-600 hover:bg-yellow-500 hover:text-white text-yellow-100 active:outline-none focus:outline-none">Add
       Project</button>
     <ul class="flex flex-wrap mt-4">
