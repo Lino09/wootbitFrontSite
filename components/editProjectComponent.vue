@@ -120,16 +120,18 @@ export default {
          
          const data = new FormData()
          const json = JSON.stringify({
-           
+    
            name: this.project.attributes.name,
            type: this.project.attributes.type,
            client_name: this.project.attributes.client_name,
-           echnologies_used: this.project.attributes.technologies_used,
-           description: this.project.attributes.description
+           technologies_used: this.project.attributes.technologies_used,
+           description: this.project.attributes.description,
+           link: 'https://wootbit.io'
          })
-        
-         data.append('data', json)
-         data.append('json/photo', this.project.attributes.photo)
+         data.append('id', this.project.id)
+         data.append('attributes', json)
+         data.append('photo', this.project.attributes.photo)
+         
          for (const value of data.values()) {
    console.log(value);
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="mt-8 focus:ourline-none" >
-    <button @click.prevent="editProject(project)"
+    <button @click.prevent="editProject(projecto)"
       class=" p-2 rounded-lg border font-bold bg-yellow-600 hover:bg-yellow-500 hover:text-white text-yellow-100 active:outline-none focus:outline-none">Add
       Project</button>
     <ul class="flex flex-wrap mt-4">
@@ -61,12 +61,13 @@
 
 
             <svg
-            @click.prevent="deleteProject(project, index)"
+            @click.prevent="requestDeleteProject(project, index)"
             xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-red-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
+            
           </div>
           </div>
           
@@ -74,6 +75,7 @@
       </li>
     </ul>
     <edit-project-component @addNewProject="addNewProject" @closeplease="toggleEditView"  :editable="editable" :edit-view="editView"></edit-project-component>
+    <confirmation-delete-component @closeplease="requestDeleteProject" :project="editable" :is-tryingto-delete="isTryingtoDelete" @confirm="deleteProject(project,index)"></confirmation-delete-component>
   </div>
 </template>
 
@@ -92,12 +94,24 @@
         projects: [],
         editable:{},
         editView: false,
+        projecto: {
+          id: null,
+              attributes:{
+                name: '',
+                type: '',
+                client_name: '',
+                technologies_used: '',
+                description: '',
+                photo:'',
+                }
+    },
+    isTryingtoDelete: false,
       }
     },
     methods: {
 
       async fetchProjects() {
-        console.log(this.projects)
+       
         this.$axios.setToken(this.usertkn, 'Bearer')
         await this.$axios.$get('/api/projects').then(response => {
           this.projects = response.data
@@ -113,8 +127,8 @@
         }
       },
     editProject(project){
-    this.editable = project
-    this.toggleEditView()
+      this.editable = project
+      this.toggleEditView()
   },
   toggleEditView(){
       this.editView = !this.editView
@@ -128,6 +142,11 @@
   addNewProject(){
     this.projects.push(this.$store.state.newProject)
     this.$store.commit('updateNewProject',{})
+  },
+  requestDeleteProject(project,index){
+    this.isTryingtoDelete = !this.isTryingtoDelete
+    this.editable = project
+    
   }
     },
   }
