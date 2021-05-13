@@ -38,6 +38,13 @@ Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes 
                                     {{project.attributes.description}}
                                 </p>
                             <!-- </a> -->
+                            <div class="flex mt-4 text-sm text-gray-500">
+                <!-- <span>
+                  {{project.attributes.technologies_used}}
+                </span> -->
+                <badges-component :projectTech="project.attributes.technologies_used"></badges-component>
+              </div>
+                            
                         </div>
                         <div class="mt-6 flex items-center">
                             <div class="flex-shrink-0">
@@ -54,17 +61,6 @@ Aquí un ejemplo de los productos que hemos desarrollado para nuestros clientes 
                                         {{project.attributes.client_name}}
                                     </a>
                                 </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2020-03-16">
-                                        Mar 16, 2020
-                                    </time>
-                                    <span aria-hidden="true">
-                          &middot;
-                        </span>
-                                    <span>
-                          {{project.attributes.technologies_used}}
-                        </span>
-                                </div>
                             </div>
                         </div>
                     </div>

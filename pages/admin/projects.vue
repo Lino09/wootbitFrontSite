@@ -1,7 +1,6 @@
 <template>
   <div class="mt-8 focus:ourline-none" >
-    <button @click.prevent="editProject(projecto)"
-      class=" p-2 rounded-lg border font-bold bg-yellow-600 hover:bg-yellow-500 hover:text-white text-yellow-100 active:outline-none focus:outline-none">Add
+    <button class=" p-2 rounded-lg border font-bold bg-yellow-600 hover:bg-yellow-500 hover:text-white text-yellow-100 active:outline-none focus:outline-none" @click.prevent="editProject(projecto)">Add
       Project</button>
     <ul class="flex flex-wrap mt-4">
       <li v-for="(project, index) in projects" :key="index"
@@ -21,16 +20,17 @@
             </p>
             <!-- <a href="#" class="block mt-2"> -->
 
-            <p class="mt-3 text-base text-gray-500">
+            <p class="mt-3 text-base text-gray-500 ">
               {{project.attributes.description}}
             </p>
             <!-- </a> -->
             
           </div>
            <div class="flex mt-2 text-sm text-gray-500">
-                <span>
+                <!-- <span>
                   {{project.attributes.technologies_used}}
-                </span>
+                </span> -->
+                <badges-component :project-tech="project.attributes.technologies_used"></badges-component>
               </div>
           <div class="mt-6 flex items-center w-full">
             
@@ -53,17 +53,17 @@
              <div class="flex justify-end">
 
             <svg 
-            @click.prevent="editProject(project)" xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-green-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
+            xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-green-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" @click.prevent="editProject(project)" >
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
 
 
             <svg
-            @click.prevent="requestDeleteProject(project, index)"
+            
             xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer text-red-600 mx-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
+              stroke="currentColor" @click.prevent="requestDeleteProject(project)">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
@@ -74,8 +74,8 @@
         </div>
       </li>
     </ul>
-    <edit-project-component @addNewProject="addNewProject" @closeplease="toggleEditView"  :editable="editable" :edit-view="editView"></edit-project-component>
-    <confirmation-delete-component @closeplease="requestDeleteProject" :project="editable" :is-tryingto-delete="isTryingtoDelete" @confirm="deleteProject(project,index)"></confirmation-delete-component>
+    <edit-project-component  :editable="editable" :edit-view="editView" @addNewProject="fetchProjects" @closeplease="toggleEditView"></edit-project-component>
+    <confirmation-delete-component :project="editable" :is-tryingto-delete="isTryingtoDelete"  @closeplease="requestDeleteProject" @confirm="deleteProject"></confirmation-delete-component>
   </div>
 </template>
 
@@ -83,11 +83,6 @@
   export default {
     layout: 'admin',
     auth: false,
-
-    created() {
-      this.updateUserTkn()
-      this.fetchProjects()
-    },
     data() {
       return {
         usertkn: '',
@@ -106,7 +101,14 @@
                 }
     },
     isTryingtoDelete: false,
+    projectToDelete:{}
       }
+    },
+    
+
+    created() {
+      this.updateUserTkn()
+      this.fetchProjects()
     },
     methods: {
 
@@ -133,21 +135,18 @@
   toggleEditView(){
       this.editView = !this.editView
   },
-  deleteProject(project,index){
-    this.$axios.$delete('/api/projects/' + project.id, project).then(response => {
+  deleteProject(){
+    this.$axios.$delete('/api/projects/' + this.projectToDelete.id, this.projectToDelete).then(response => {
           console.log(response)
-          this.projects.splice(index,1)
+          this.isTryingtoDelete = !this.isTryingtoDelete
+          this.fetchProjects()
         }).catch(error => console.log(error))
   },
-  addNewProject(){
-    this.projects.push(this.$store.state.newProject)
-    this.$store.commit('updateNewProject',{})
-  },
-  requestDeleteProject(project,index){
+  requestDeleteProject(project){
     this.isTryingtoDelete = !this.isTryingtoDelete
+    this.projectToDelete = project 
     this.editable = project
-    
-  }
+  },
     },
   }
 

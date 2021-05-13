@@ -25,15 +25,21 @@
 
       <div class="flex w-full flex-col lg:w-1/2 mx-2">
         <label for="nombre">Nombre</label>
-        <input class="rounded-md" id="nombre" type="text" v-model="project.attributes.name">
+        <input id="nombre" v-model="project.attributes.name" class="rounded-md" type="text" >
         <label class="mt-4" for="descripcion">Descripcion</label>
-        <textarea class="rounded-md" id="descripcion" type="text" rows="4" v-model="project.attributes.description" ></textarea>
+        <textarea 
+        id="descripcion" 
+        v-model="project.attributes.description"
+        class="rounded-md" 
+        type="text" 
+        rows="4" 
+         ></textarea>
       </div>
       <div class="grid grid-cols-2 w-full lg:w-1/2 mx-2 gap-1">
       <div class="flex flex-col w-full ">
 
         <label for="type">Type</label>
-        <select class="rounded-md" id="type" v-model="project.attributes.type">
+        <select id="type" v-model="project.attributes.type" class="rounded-md">
           <option disabled value="">Selecciona tipo</option>
           <option>WebSite</option>
           <option>Photo</option>
@@ -44,12 +50,12 @@
       <div class="flex flex-col w-full ">
         
         <label for="clientName">Client Name</label>
-        <input class="rounded-md" id="clientName" type="text" v-model="project.attributes.client_name">
+        <input  id="clientName" v-model="project.attributes.client_name" class="rounded-md" type="text" >
       </div>
       <div class="flex flex-col w-full col-span-2">
         
         <label for="technologies_used">Technologies Used</label>
-        <input class="rounded-md" id="technologies_used" type="text" v-model="project.attributes.technologies_used">
+        <input id="technologies_used" v-model="project.attributes.technologies_used" class="rounded-md"  type="text" >
       </div>
       <input class="col-span-2" type="file" @change="onFileSelected">
       </div>
@@ -57,10 +63,10 @@
      </div>
        
       <div class="mt-5 sm:mt-6 flex">
-        <button @click.prevent="saveChanges(project)" tupe="button" class="mx-2 inline-flex justify-center w-2/3 rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
+        <button type="button" class="mx-2 inline-flex justify-center w-2/3 rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm" @click.prevent="saveChanges(project)">
           Guardar Cambios
         </button>
-        <button @click.prevent="closeit" tupe="button" class="mx-2 inline-flex justify-center w-1/3 rounded-md border border-indigo-500  px-4 py-2 text-base font-medium text-indigo-600  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
+        <button type="button" class="mx-2 inline-flex justify-center w-1/3 rounded-md border border-indigo-500  px-4 py-2 text-base font-medium text-indigo-600  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm" @click.prevent="closeit">
           Cancelar
         </button>
       </div>
@@ -76,7 +82,9 @@ export default {
   
     props:{
         editable:{
-            default:{
+          type:Object,
+            default(){
+            return {
               id: null,
               attributes:{
                 name: '',
@@ -85,6 +93,7 @@ export default {
                 technologies_used: '',
                 description: '',
               }
+            }
             }
         },
         editView:{
@@ -111,6 +120,7 @@ export default {
     methods:{
         closeit(){
             this.$emit('closeplease')
+            this.project.attributes.photo = ''
         },
         onFileSelected(event){
           this.project.attributes.photo = event.target.files[0]
@@ -132,20 +142,20 @@ export default {
          data.append('attributes', json)
          data.append('photo', this.project.attributes.photo)
          
-         for (const value of data.values()) {
-   console.log(value);
-}
+         
          // Diferencia entre crear nuevo y editar existente
         if(this.project.id === null){
           this.$axios.$post("/api/projects", data).then(response=>{
             console.log(response)
-            this.$store.commit('updateNewProject', this.project)
             this.$emit('addNewProject')
+            this.project.attributes.photo = ''
           }).catch(error=>console.log(error)).finally( ()=> this.$emit('closeplease'))
         }else{
-           this.$axios.$put("/api/projects/" + this.project.id, data).then(response=> {
+          data.append('_method', 'PUT')
+           this.$axios.$post("/api/projects/" + this.project.id, data).then(response=> {
              console.log(response)
-             
+             this.$emit('addNewProject')
+             this.project.attributes.photo = ''
              }).catch(error=>console.log(error)).finally( ()=> this.$emit('closeplease'))
         }
 

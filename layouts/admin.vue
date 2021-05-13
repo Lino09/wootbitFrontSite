@@ -144,7 +144,7 @@
           </a>
           <nav class="mt-5 flex-1 px-2 bg-gray-800 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/admin/dashboard" :class="{'bg-gray-900 text-white': (routeName=='/admin/dashboard'),'text-gray-300': !(routeName=='/admin/dashboard') }" class="hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+            <a href="/admin/dashboard" :class="{'bg-gray-900 text-white': (routeName=='/admin/dashboard/'),'text-gray-300': !(routeName=='/admin/dashboard') }" class="hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!--
                 Heroicon name: outline/home
 
@@ -164,7 +164,7 @@
               Team
             </a>
 
-            <a  href="/admin/projects"  :class="{'bg-gray-900 text-white': (routeName=='/admin/projects'),'text-gray-300': !(routeName=='/admin/projects')}" class="hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+            <a  href="/admin/projects"  :class="{'bg-gray-900 text-white': (routeName=='/admin/projects/'),'text-gray-300': !(routeName=='/admin/projects')}" class="hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!-- Heroicon name: outline/folder -->
               <svg class="text-gray-400 group-hover:text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
