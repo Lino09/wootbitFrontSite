@@ -24,7 +24,7 @@
               {{project.attributes.description}}
             </p>
             <!-- </a> -->
-            
+            <span>{{project.attributes.link}}</span>
           </div>
            <div class="flex mt-2 text-sm text-gray-500">
                 <!-- <span>
