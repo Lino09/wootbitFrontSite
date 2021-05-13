@@ -79,7 +79,7 @@ export default {
       login: '/auth/login',
       logout: '/',
       callback: '/auth/login',
-      home: '/'
+      home: '/admin/panel/'
     },
     strategies:{
       'laravelSanctum':{
