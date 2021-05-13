@@ -82,7 +82,7 @@
 <script>
   export default {
     layout: 'admin',
-    auth: false,
+  
     data() {
       return {
         usertkn: '',
@@ -125,7 +125,6 @@
           this.usertkn = this.$auth.$storage.getCookie('token')
         } catch (e) {
           console.log(e, 'NO HAY TOKEN')
-          this.$router.push('/')
         }
       },
     editProject(project){

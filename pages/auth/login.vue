@@ -127,7 +127,7 @@ this.$auth.loginWith('laravelSanctum',{
   this.$auth.$storage.setCookie('token', response.data.meta.token,false)
   this.$auth.$storage.setLocalStorage('user', response.data.data.attributes)
   this.$auth.setUser(response.data.data.attributes)
-  this.$router.push({name: 'admin-dashboard'})
+  this.$router.push('/admin/dashboard/')
  
 }
 ).catch(error=> {
