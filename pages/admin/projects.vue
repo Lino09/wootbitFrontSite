@@ -20,7 +20,7 @@
             </p>
             <!-- <a href="#" class="block mt-2"> -->
 
-            <p class="mt-3 text-base text-gray-500 ">
+            <p class="mt-3 text-center text-base text-gray-500">
               {{project.attributes.description}}
             </p>
             <!-- </a> -->

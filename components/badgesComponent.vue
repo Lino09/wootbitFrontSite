@@ -1,6 +1,6 @@
 <template>
-<div class="flex space-x-1">
-  <span v-for="(badge,index) in badges" :key="index"  class="flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"  :class="colors[index%7]"  >
+<div class=" w-full grid grid-cols-2 sm:grid-cols-3 gap-1">
+  <span v-for="(badge,index) in badges" :key="index"  class="flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium"  :class="colors[index%7]"  >
     {{badge}} 
   </span>
 </div>

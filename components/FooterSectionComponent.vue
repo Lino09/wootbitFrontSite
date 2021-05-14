@@ -1,7 +1,7 @@
 <template>
     <div>
         <footer class="bg-gray-800">
-            <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto pt-12 pb-4 px-4 overflow-hidden sm:px-6 lg:px-8">
                 <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     <div class="px-5 py-2">
                         <a href="/" class="text-base text-gray-400 hover:text-gray-100">
@@ -47,6 +47,7 @@
                     <!--                        </a>-->
                     <!--                    </div>-->
                 </nav>
+                
                 <div class="mt-8 flex justify-center space-x-6">
                     <a href="https://www.facebook.com/wootbit.io" class="text-gray-400 hover:text-gray-100"
                        target="_blank">
@@ -69,7 +70,16 @@
                     </a>
 
                 </div>
-                <p class="mt-8 text-center text-base text-gray-400">
+                <div class="text-base text-gray-400 grid grid-cols-9 text-center mt-8">
+                    <a href="mailto:dev@wootbit.io" class="hover:text-gray-100 col-span-4 justify-self-end">
+                    Mail: dev@wootbit.io 
+                    </a>
+                    <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                    <a href="callto:+527222478613" class="hover:text-gray-100 col-span-4 justify-self-start">
+                        Phone: +52-722-247-86-13
+                    </a>
+                </div>
+                <p class="mt-4 text-center text-base text-gray-400">
                     &copy; <span v-text="actual_year"></span> WootBit, Inc. All rights reserved.
                 </p>
             </div>
