@@ -198,13 +198,13 @@
           </nav>
         </div>
         <div class="flex-shrink-0 flex bg-gray-700 p-4">
-          <a href="#" class="flex-shrink-0 w-full group block">
+          <!-- <a href="#" class="flex-shrink-0 w-full group block"> -->
             <div class="flex items-center">
               <div>
                 <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=jlLmNGkxDS&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
               </div>
               <div class="ml-3">
-                <p class="text-sm font-medium text-white">
+                <p class="text-sm font-medium text-white capitalize">
                   {{user.name}}
                 </p>
                 <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">
@@ -213,7 +213,7 @@
                 </p>
               </div>
             </div>
-          </a>
+          <!-- </a> -->
         </div>
       </div>
     </div>

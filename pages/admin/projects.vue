@@ -24,7 +24,7 @@
               {{project.attributes.description}}
             </p>
             <!-- </a> -->
-            <span>{{project.attributes.link}}</span>
+            <span class="text-xs font-semibold rounded-full px-2 bg-gray-200">{{project.attributes.link}}</span>
           </div>
            <div class="flex mt-2 text-sm text-gray-500">
                 <!-- <span>
@@ -81,7 +81,7 @@
 
 <script>
   export default {
-    auth: false,
+    
     layout: 'admin',
   
     data() {
