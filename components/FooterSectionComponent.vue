@@ -72,11 +72,11 @@
                 </div>
                 <div class="text-base text-gray-400 grid grid-cols-9 text-center mt-8">
                     <a href="mailto:dev@wootbit.io" class="hover:text-gray-100 col-span-4 justify-self-end">
-                    Mail: dev@wootbit.io 
+                   dev@wootbit.io 
                     </a>
                     <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
                     <a href="callto:+527222478613" class="hover:text-gray-100 col-span-4 justify-self-start">
-                        Phone: +52-722-247-86-13
+                        +52 722 247 86 13
                     </a>
                 </div>
                 <p class="mt-4 text-center text-base text-gray-400">

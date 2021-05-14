@@ -81,6 +81,7 @@
 
 <script>
   export default {
+    auth: false,
     layout: 'admin',
   
     data() {
@@ -98,6 +99,7 @@
                 technologies_used: '',
                 description: '',
                 photo:'',
+                link:''
                 }
     },
     isTryingtoDelete: false,

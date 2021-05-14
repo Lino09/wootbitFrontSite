@@ -32,7 +32,7 @@
         v-model="project.attributes.description"
         class="rounded-md" 
         type="text" 
-        rows="4" 
+        rows="5" 
          ></textarea>
       </div>
       <div class="grid grid-cols-2 w-full lg:w-1/2 mx-2 gap-1">
@@ -53,13 +53,15 @@
         <input  id="clientName" v-model="project.attributes.client_name" class="rounded-md" type="text" >
       </div>
       <div class="flex flex-col w-full col-span-2">
-        
         <label for="technologies_used">Technologies Used</label>
         <input id="technologies_used" v-model="project.attributes.technologies_used" class="rounded-md"  type="text" >
       </div>
-      <input class="col-span-2" type="file" @change="onFileSelected">
+      <input class="col-span-2 border" type="file" @change="onFileSelected">
+      <div class="col-span-2 flex flex-col">
+       <label for="link">Link</label>
+        <input  id="link" v-model="project.attributes.link" class="rounded-md " type="text" >
       </div>
-       
+      </div>
      </div>
        
       <div class="mt-5 sm:mt-6 flex">
@@ -92,6 +94,7 @@ export default {
                 client_name: '',
                 technologies_used: '',
                 description: '',
+                link:''
               }
             }
             }
@@ -113,6 +116,7 @@ export default {
                 technologies_used: '',
                 description: '',
                 photo:'',
+                link:''
                 }
     }
     }
@@ -169,6 +173,7 @@ export default {
         this.project.attributes.client_name  = this.editable.attributes.client_name
         this.project.attributes.technologies_used  = this.editable.attributes.technologies_used
         this.project.attributes.description  = this.editable.attributes.description
+        this.project.attributes.link  = this.editable.attributes.link
       }
     }
 
