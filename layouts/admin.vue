@@ -209,7 +209,7 @@
                 </p>
                 <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">
                   <!-- {{user.email}} -->
-                  {{routeName}}
+                  <!-- {{routeName}} -->
                 </p>
               </div>
             </div>
