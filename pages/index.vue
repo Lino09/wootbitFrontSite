@@ -315,15 +315,23 @@ if(!this.usertkn){
       await this.$axios.$get('/api/projects').then( response => {
           this.projects = response.data
       }).catch(error => {
-          if(error.message === 'Request failed with status code 401'){
-            console.log('Este usuario inicio sesion en desde local o produccion y sobreescribio la sesion actual')
-    this.$auth.$storage.removeLocalStorage('user')
-    console.log('user deleted')
-    this.$auth.$storage.removeCookie('token', false)
-     console.log('user Token deleted')
-     location.reload();
+           if(error.response.status === 401) {
+        this.$auth.strategy.token.set('Bearer '+ this.$auth.$storage.getCookie('token'))
+        const userId = this.$auth.$storage.getLocalStorage('user').id
+        console.log(userId)
+    this.$auth.logout( {data:{
+      id:userId
+    }} ).then(response => {
+      console.log(response,'logout')
+      this.$auth.$storage.removeLocalStorage('user')
+      console.log('user deleted')
+      this.$auth.$storage.removeCookie('token', false)
+       console.log('user Token deleted')
+       location.reload()
+    })
+    }
           }
-      })
+      )
     },
     currentDate() {
         const current = new Date();

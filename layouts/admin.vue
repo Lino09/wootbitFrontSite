@@ -235,7 +235,7 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 bg-gray-200">
           <!-- Replace with your content -->
-          <Nuxt />
+          <Nuxt @logout="(logout)"/>
         </div>
       </div>
     </main>
