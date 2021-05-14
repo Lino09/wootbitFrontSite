@@ -297,9 +297,9 @@ data(){
       }
   },
   created() {
-      this.updateUserTkn()
-     this.fetchProjects()
-      this.currentDate()
+    this.updateUserTkn()
+    this.fetchProjects()
+    this.currentDate()
 },
 
 methods:{
@@ -314,7 +314,16 @@ if(!this.usertkn){
 
       await this.$axios.$get('/api/projects').then( response => {
           this.projects = response.data
-      }).catch(error => console.log(error))
+      }).catch(error => {
+          if(error.message === 'Request failed with status code 401'){
+            console.log('Este usuario inicio sesion en desde local o produccion y sobreescribio la sesion actual')
+    this.$auth.$storage.removeLocalStorage('user')
+    console.log('user deleted')
+    this.$auth.$storage.removeCookie('token', false)
+     console.log('user Token deleted')
+     location.reload();
+          }
+      })
     },
     currentDate() {
         const current = new Date();
@@ -325,7 +334,7 @@ if(!this.usertkn){
        try{
            this.usertkn = this.$auth.$storage.getCookie('token') 
        } catch(e){
-           console.log(e, 'que pedo que pedo')
+           console.log(e, 'No hay Token')
        }
     }
 }
