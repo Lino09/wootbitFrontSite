@@ -20,7 +20,7 @@
             </p>
             <!-- <a href="#" class="block mt-2"> -->
 
-            <p class="mt-3 text-center text-base text-gray-500">
+            <p class="mt-3 text-justify text-base text-gray-500">
               {{project.attributes.description}}
             </p>
             <!-- </a> -->
@@ -120,7 +120,16 @@
         await this.$axios.$get('/api/projects').then(response => {
           this.projects = response.data
           
-        }).catch(error => console.log(error))
+        }).catch(error => {
+          if(error.message === 'Request failed with status code 401'){
+            console.log('Este usuario inicio sesion en desde local o produccion y sobreescribio la sesion actual')
+    this.$auth.$storage.removeLocalStorage('user')
+    console.log('user deleted')
+    this.$auth.$storage.removeCookie('token', false)
+     console.log('user Token deleted')
+     this.$router.push('/')
+          }
+        })
       },
       updateUserTkn() {
         try {

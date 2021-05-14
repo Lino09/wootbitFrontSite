@@ -248,7 +248,9 @@
 export default {
     data(){
         return{
-            user:'',
+            user:{
+              name:'Fake User'
+            },
             routeName:''
         }
     },
@@ -258,7 +260,14 @@ this.routeName = this.$route.path
 },
     methods:{
         fetchUSer(){
-            this.user = this.$auth.$storage.getLocalStorage('user')
+              this.user = this.$auth.$storage.getLocalStorage('user')
+
+          // Previene mandar a pantalla 404 si la sesion no esta iniciada correctamente, no deberia pasar nunca pero es para prevenir
+          // podria pasar si se elimina el localstorage
+              if(this.user === null){
+                this.user= {name:'Fake User'}
+              }
+                
         },
     logout(){
       this.$auth.strategy.token.set('Bearer '+ this.$auth.$storage.getCookie('token'))
