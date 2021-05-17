@@ -3,14 +3,14 @@
         <header>
             <div class="relative bg-white" id="home-section">
                 <div class="flex justify-end items-center max-w-7xl
-                            mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
+                            mx-auto px-4  py-2 md:py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
 
                     <div class="flex justify-center md:justify-start flex-none md:w-auto w-full place-self-center">
                         <a href="#">
                             <span class="sr-only">logo</span>
                             <img class="hidden lg:block lg:md-12 h-12"
                                  src="../static/letrasWtbt.png" alt="">
-                            <img class="lg:hidden w-16 md:w-12 ml-10 md:ml-0  "
+                            <img class="lg:hidden w-16 md:w-12 ml-16 md:ml-0  "
                                  src="../static/wootbitiologo.png" alt="">
                         </a>
                     </div>

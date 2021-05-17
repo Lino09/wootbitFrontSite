@@ -4,7 +4,7 @@
       Project</button>
     <ul class="flex flex-wrap mt-4">
       <li v-for="(project, index) in projects" :key="index"
-        class="w-1/3 flex flex-col rounded-lg overflow-hidden mb-8 px-1">
+        class="sm:w-1/2 lg:w-1/3 flex flex-col rounded-lg overflow-hidden mb-8 px-1">
         <div class="flex-shrink-0 h-24 rounded-t-md flex w-full bg-gray-100">
           <img  class="w-24 h-24 object-cover rounded-t-md" :src="project.attributes.picture" alt="">
           <p class="text-md font-semibold text-gray-900 p-2">
@@ -81,6 +81,7 @@
 
 <script>
   export default {
+  auth: false,
     
     layout: 'admin',
   
