@@ -129,7 +129,7 @@
       console.log('user deleted')
       this.$auth.$storage.removeCookie('token', false)
        console.log('user Token deleted')
-       location.reload()
+      this.$router.push('/')
     })
     }
         })
