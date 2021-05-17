@@ -123,12 +123,7 @@
           
         }).catch(error => {
           if(error.response.status === 401) {
-        this.$auth.strategy.token.set('Bearer '+ this.$auth.$storage.getCookie('token'))
-        const userId = this.$auth.$storage.getLocalStorage('user').id
-        console.log(userId)
-    this.$auth.logout( {data:{
-      id:userId
-    }} ).then(response => {
+    this.$auth.logout().then(response => {
       console.log(response,'logout')
       this.$auth.$storage.removeLocalStorage('user')
       console.log('user deleted')
