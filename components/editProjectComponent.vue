@@ -151,7 +151,7 @@
           client_name: this.project.attributes.client_name,
           technologies_used: this.project.attributes.technologies_used,
           description: this.project.attributes.description,
-          link: 'https://wootbit.io'
+          link: this.link
         })
         data.append('id', this.project.id)
         data.append('attributes', json)

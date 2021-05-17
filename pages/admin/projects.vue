@@ -81,8 +81,6 @@
 
 <script>
   export default {
-  auth: false,
-    
     layout: 'admin',
   
     data() {

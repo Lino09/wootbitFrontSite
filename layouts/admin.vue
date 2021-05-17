@@ -2,7 +2,7 @@
   <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="h-screen flex overflow-hidden bg-gray-100">
   <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-  <div v-show="!mobileMenu" class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true">
+  <div v-show="mobileMenu" class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true">
     <!--
       Off-canvas menu overlay, show/hide based on off-canvas menu state.
 
