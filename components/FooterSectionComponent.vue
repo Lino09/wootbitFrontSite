@@ -4,32 +4,41 @@
             <div class="max-w-7xl mx-auto pt-8 pb-4 px-4 overflow-hidden sm:px-6 lg:px-8">
                 <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     <div class="px-5 py-2">
-                        <a href="/" class="text-base text-gray-400 hover:text-gray-100">
+                        <a 
+                        href="/" class="text-base text-gray-400 hover:text-gray-100">
                             Inicio
                         </a>
                     </div>
 
                     <div v-if="!isLoggin" class="px-5 py-2">
-                        <a href="#" v-scroll-to="'#services-section'"
+                        <a 
+                        v-scroll-to="'#services-section'"
+                        href="#" 
                            class="text-base text-gray-400 hover:text-gray-100">
                             Servicios
                         </a>
                     </div>
 
                     <div v-if="!isLoggin" class="px-5 py-2">
-                        <a href="#" v-scroll-to="'#projects-section'" class="text-base text-gray-400 hover:text-gray-100">
+                        <a 
+                        v-scroll-to="'#projects-section'" class="text-base text-gray-400 hover:text-gray-100"
+                        href="#" >
                             Proyectos
                         </a>
                     </div>
 
                     <div v-if="!isLoggin" class="px-5 py-2">
-                        <a href="#" v-scroll-to="'#team-section'" class="text-base text-gray-400 hover:text-gray-100">
+                        <a 
+                        v-scroll-to="'#team-section'" class="text-base text-gray-400 hover:text-gray-100"
+                        href="#" >
                             Nosotros
                         </a>
                     </div>
 
                     <div v-if="!isLoggin" class="px-5 py-2">
-                        <a href="#" v-scroll-to="'#contact-section'"
+                        <a 
+                        v-scroll-to="'#contact-section'"
+                        href="#" 
                            class="text-base text-gray-400 hover:text-gray-100">
                             Contacto
                         </a>
@@ -89,26 +98,25 @@
 
 <script>
 export default {
+    name: "FooterSectionComponent",
     props: {
         isLoggin:{
             type: Boolean,
             default: false
         }
     },
-    name: "FooterSectionComponent",
+    data(){
+    return{
 
+        actual_year:2022
+    }
+},
 created(){
 
         const current = new Date();
         const date = current.getFullYear()
         this.actual_year = date
     
-},
-data(){
-    return{
-
-        actual_year:2022
-    }
 }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="bg-white" id="team-section">
+        <div id="team-section" class="bg-white">
             <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
                 <div class="space-y-12">
                     <div class="space-y-5 sm:space-y-4 text-justify">
@@ -72,8 +72,15 @@
 
 <script>
 export default {
-    props: ['team'],
     name: "TeamsSectionComponent",
+    props: {
+        team:{
+            type: Array,
+            default(){
+                return[]
+            }
+            }
+    },
 computed:{
 }
 }

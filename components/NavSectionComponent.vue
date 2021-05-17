@@ -1,7 +1,7 @@
 <template>
     <div>
         <header>
-            <div class="relative bg-white" id="home-section">
+            <div id="home-section" class="relative bg-white">
                 <div class="flex justify-end items-center max-w-7xl
                             mx-auto px-4  py-2 md:py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
 
@@ -17,7 +17,7 @@
                     <div class="-mr-2 -my-2 md:hidden">
                         <button type="button"
                                 class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                v-on:click.prevent="isOpen = !isOpen">
+                                @click.prevent="isOpen = !isOpen">
                             <span class="sr-only">Open menu</span>
                             <!-- Heroicon name: outline/menu -->
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -38,7 +38,7 @@
                             <span>Inicio</span>
                         </a>
 
-                        <a href="#" v-scroll-to="'#services-section'"
+                        <a v-scroll-to="'#services-section'" href="#"
                            class="text-base font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap h-8 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" class="w-5">
@@ -49,7 +49,7 @@
                         </a>
 
 
-                        <a href="#" v-scroll-to="'#projects-section'" class="text-base font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap h-8 items-center">
+                        <a  v-scroll-to="'#projects-section'" href="#" class="text-base font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap h-8 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" class="w-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -58,7 +58,7 @@
                            <span> Proyectos</span>
                         </a>
 
-                        <a href="#" v-scroll-to="'#team-section'"
+                        <a v-scroll-to="'#team-section'" href="#"
                            class="text-base font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap h-8 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" class="w-5">
@@ -68,7 +68,7 @@
                            <span> Nosotros</span>
                         </a>
 
-                        <a href="#" v-scroll-to="'#contact-section'"
+                        <a v-scroll-to="'#contact-section'" href="#"
                            class="text-base font-medium text-gray-500 hover:text-gray-900 flex flex-nowrap h-8 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor" class="w-5">
@@ -83,7 +83,7 @@
                         <!--                           class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">-->
                         <!--                            Sign in-->
                         <!--                        </a>-->
-                    <a :href="this.isAdmin[0]">
+                    <a :href="isAdmin[0]">
                       <button class="hidden  ml-8 whitespace-nowrap lg:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">{{isAdmin[1]}}</button>
                       <svg class="text-indigo-600 w-6 h-6 lg:hidden" xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -123,7 +123,7 @@
                                     <div class="-mr-2">
                                         <button type="button"
                                                 class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                        v-on:click.prevent="isOpen = !isOpen">
+                                        @click.prevent="isOpen = !isOpen">
                                             <span class="sr-only">Close menu</span>
                                             <!-- Heroicon name: outline/x -->
                                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="mt-6">
                                     <nav class="grid grid-cols-1 gap-7">
-                                        <a href="#" v-scroll-to="'#services-section'" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                                        <a v-scroll-to="'#services-section'" href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                             <div
                                                 class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
                                                 <!-- Heroicon name: outline/inbox -->
@@ -152,7 +152,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" v-scroll-to="'#projects-section'" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                                        <a  v-scroll-to="'#projects-section'" href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                             <div
                                                 class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
                                                 <!-- Heroicon name: outline/annotation -->
@@ -168,7 +168,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" v-scroll-to="'#team-section'" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                                        <a v-scroll-to="'#team-section'" href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                             <div
                                                 class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -183,7 +183,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" v-scroll-to="'#contact-section'" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                                        <a v-scroll-to="'#contact-section'" href="#" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                                             <div
                                                 class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-600 text-white">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -215,7 +215,7 @@
                                     </a>
                                 </div>
                                 <div class="">
-                                    <a :href="this.isAdmin[0]"
+                                    <a :href="isAdmin[0]"
                                        class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                                         {{isAdmin[1]}} 
                                     </a>
@@ -247,8 +247,6 @@ export default {
     },
     created(){
         this.isThereAnAdmin()
-    },
-    computed:{
     },
     methods:{
         isThereAnAdmin(){
