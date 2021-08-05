@@ -259,7 +259,6 @@
     Carousel,
     Slide
   } from 'vue-carousel';
-  // import { mapState } from 'vuex'
   export default {
     auth: false,
 
